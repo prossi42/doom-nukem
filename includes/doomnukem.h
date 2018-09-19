@@ -20,4 +20,20 @@
 
 # define BUFF_SIZE 0xfffff
 
+typedef struct		s_env
+{
+	Display			*display_struct;
+	Screen			*screen_struct;
+	int				scr_height;
+	int				scr_width;
+}					t_env;
+
+typedef struct		s_main
+{
+	t_env			env;
+}					t_main;
+
+int		get_env(t_main *main, int option);
+
+
 #endif

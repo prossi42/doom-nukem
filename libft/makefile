@@ -40,7 +40,14 @@ SRC_NAME_OFF = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 SRC_NAME_PIMP = ft_openfile.c ft_readfile.c ft_closefile.c get_next_line.c \
 				ft_realloc_free.c ft_strjoin_free.c ft_tabint.c
 
-SRC_NAME_GRAPH =
+SRC_NAME_GRAPH = aa.c awklm_string_put.c bb.c cc.c colons.c dd.c dot.c \
+draw_high_letter.c ee.c eight.c empty_box.c exclamation.c ff.c five.c four.c \
+ft_arc_sd.c ft_arc.c ft_ellipse.c ft_full_arc.c ft_full_ellipse.c \
+ft_init_value_settings.c ft_init_value_two.c ft_segment.c full_box.c gg.c \
+hashtag.c hh.c ii.c init_segment_a.c init_segment_b.c \
+init_segment_e.c jj.c kk.c ll.c minus.c mm.c nine.c nn.c one.c oo.c pp.c \
+qq.c rr.c settings.c seven.c six.c slash.c ss.c three.c tt.c two.c uu.c vv.c \
+ww.c xx.c yy.c zero.c zz.c
 
 OBJ_PATH_OFF = obj/
 
@@ -62,7 +69,7 @@ OBJ_NAME_OFF = $(SRC_NAME_OFF:.c=.o)
 
 OBJ_NAME_PIMP = $(SRC_NAME_PIMP:.c=.o)
 
-OBJ_NAME_GRAPH = $(SRC_NAME_GRAPH:.c=.0)
+OBJ_NAME_GRAPH = $(SRC_NAME_GRAPH:.c=.o)
 
 SRC_OFF = $(addprefix $(SRC_PATH_OFF)/,$(SRC_NAME_OFF))
 
