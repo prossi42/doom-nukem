@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_env.c                                          :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/19 22:19:28 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 08:45:41 by awk-lm           ###   ########.fr       */
+/*   Created: 2018/09/20 09:12:09 by awk-lm            #+#    #+#             */
+/*   Updated: 2018/09/20 09:20:11 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doomnukem.h"
 
-int		get_env(t_main *m, int option)
+void	escape_exit(t_main *m)
 {
-	if (option == 0)
-	{
-		if (!(m->env.display_struct = XOpenDisplay(NULL)))
-			return(-1);
-		if (!(m->env.screen_struct = DefaultScreenOfDisplay(m->env.display_struct)))
-			return(-1);
-		m->env.scr_width = m->env.screen_struct->width;
-		m->env.scr_height = m->env.screen_struct->height - 40;
-	}
-	return(0);
+	// free(e->img.data);
+	// mlx_destroy_image(e->img.mlx_ptr, e->img.win_ptr);
+	// ntmleaks(e);
+	mlx_clear_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
+	mlx_destroy_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
+	ft_memdel((void **)&m);
+	exit(0);
 }

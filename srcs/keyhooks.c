@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_env.c                                          :+:      :+:    :+:   */
+/*   keyhooks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/19 22:19:28 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 08:45:41 by awk-lm           ###   ########.fr       */
+/*   Created: 2018/09/20 09:05:26 by awk-lm            #+#    #+#             */
+/*   Updated: 2018/09/20 09:17:36 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doomnukem.h"
 
-int		get_env(t_main *m, int option)
+int		keyhooks(int keycode, t_main *m)
 {
-	if (option == 0)
-	{
-		if (!(m->env.display_struct = XOpenDisplay(NULL)))
-			return(-1);
-		if (!(m->env.screen_struct = DefaultScreenOfDisplay(m->env.display_struct)))
-			return(-1);
-		m->env.scr_width = m->env.screen_struct->width;
-		m->env.scr_height = m->env.screen_struct->height - 40;
-	}
+	(void)m;
+	if (keycode == 65307)
+		escape_exit(m);
+	printf("Valeur du keycode : [%d]\n", keycode);
 	return(0);
 }

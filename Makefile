@@ -6,7 +6,7 @@
 #    By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/13 14:28:04 by awk-lm            #+#    #+#              #
-#    Updated: 2018/09/19 22:21:44 by awk-lm           ###   ########.fr        #
+#    Updated: 2018/09/20 09:10:39 by awk-lm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ MLX_DIR			:=			./minilibx
 #------------------------------------------------------------------------------#
 #                                  FILES                                       #
 
-SRC				:=			main.c get_env.c
+SRC				:=			main.c get_env.c mlx_processes.c keyhooks.c exit.c
 
 OBJ				:=			$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 NB				:=			$(words $(SRC))

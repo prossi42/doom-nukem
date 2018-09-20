@@ -20,6 +20,12 @@
 
 # define BUFF_SIZE 0xfffff
 
+typedef struct		s_mlx
+{
+	void			*mlx_ptr;
+	void			*win_ptr;
+}					t_mlx;
+
 typedef struct		s_env
 {
 	Display			*display_struct;
@@ -31,9 +37,12 @@ typedef struct		s_env
 typedef struct		s_main
 {
 	t_env			env;
+	t_mlx			mlx;
 }					t_main;
 
 int		get_env(t_main *main, int option);
+void	mlx_processes(t_main *m);
+int		keyhooks(int keycode, t_main *m);
 
 
 #endif
