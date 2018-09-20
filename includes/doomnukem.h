@@ -20,11 +20,11 @@
 
 # define BUFF_SIZE 0xfffff
 
-typedef struct		s_mlx
+typedef struct		s_mlxstuff
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
-}					t_mlx;
+}					t_mlxstuff;
 
 typedef struct		s_env
 {
@@ -32,17 +32,23 @@ typedef struct		s_env
 	Screen			*screen_struct;
 	int				scr_height;
 	int				scr_width;
+	int				resize_mode;
 }					t_env;
 
 typedef struct		s_main
 {
 	t_env			env;
-	t_mlx			mlx;
+	t_mlxstuff		mlx;
 }					t_main;
 
-int		get_env(t_main *main, int option);
-void	mlx_processes(t_main *m);
-int		keyhooks(int keycode, t_main *m);
+int					get_env(t_main *main, int option);
+void				mlx_processes(t_main *m);
+int					keyhooks(int keycode, t_main *m);
+void				escape_exit(t_main *m);
+int					struct_init(t_main *m);
+void				error_exit(int option, t_main *m);
+void				mlx_create_windows(t_main *m);
+
 
 
 #endif

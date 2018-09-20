@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_env.c                                          :+:      :+:    :+:   */
+/*   ft_strcat_lin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/19 22:19:28 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 17:10:22 by awk-lm           ###   ########.fr       */
+/*   Created: 2018/09/20 16:55:01 by awk-lm            #+#    #+#             */
+/*   Updated: 2018/09/20 17:00:53 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "doomnukem.h"
+#include "../../include/pimp_libft/my_libft.h"
 
-int		get_screen_size(t_main *m)
+char		*ft_strcat_lin(char *begin, char *end)
 {
-	
-}
+	int		i;
+	int		j;
+	char	*tmp;
 
-int		get_env(t_main *m, int option)
-{
-	if (option == 0)
+	i = -1;
+	j = -1;
+	tmp = NULL;
+	if (!(tmp = ft_strnew(ft_strlen(begin) + ft_strlen(end))))
+		return(NULL);
+	tmp = ft_strcpy(tmp, begin);
+	while (tmp[++i])
+		;
+	while (end[++j])
 	{
-		if (!(m->env.display_struct = XOpenDisplay(NULL)))
-			return(-1);
-		if (!(m->env.screen_struct = DefaultScreenOfDisplay(m->env.display_struct)))
-			return(-1);
-		m->env.scr_width = m->env.screen_struct->width - 50;
-		m->env.scr_height = m->env.screen_struct->height - 50;
+		tmp[i++] = end[j];
 	}
-	return(0);
+	return(tmp);
 }

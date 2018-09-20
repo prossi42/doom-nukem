@@ -6,7 +6,7 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:14:38 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/19 17:24:17 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/20 17:01:06 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int			get_next_line(const int fd, char **line);
 char		*ft_realloc_free(char *init, int len);
 char		*ft_strjoin_free(char *s1, char *s2, int option);
 int			**ft_tabint(int x, int y);
+char		*ft_strcat_lin(char *begin, char *end);
 
 #endif

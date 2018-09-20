@@ -1,0 +1,11 @@
+<config>
+	<screen>
+		<width></width>
+		<height></height>
+	</screen>
+	<time>
+		<first></first>
+		<last></last>
+		<total></total>
+	</time>
+</config>
