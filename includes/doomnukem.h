@@ -39,9 +39,12 @@ typedef struct		s_main
 {
 	t_env			env;
 	t_mlxstuff		mlx;
+	t_xml			xml_struct;
+	char			*r_buffer;
+	int				fd;
 }					t_main;
 
-int					get_env(t_main *main, int option);
+int					get_env(t_main *main);
 void				mlx_processes(t_main *m);
 int					keyhooks(int keycode, t_main *m);
 void				escape_exit(t_main *m);

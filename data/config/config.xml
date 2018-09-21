@@ -1,11 +1,12 @@
 <config>
 	<screen>
-		<width></width>
-		<height></height>
+		<width>500</width>
+		<height>500</height>
 	</screen>
 	<time>
-		<first></first>
-		<last></last>
-		<total></total>
+		<first>10</first>
+		<last>20</last>
+		<total>50</total>
 	</time>
 </config>
+<lol>

@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:05:54 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 11:17:23 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/21 00:48:23 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int		struct_init_env(t_main *m)
 
 int		struct_init_main(t_main *m)
 {
-	(void)m;
+	m->r_buffer = NULL;
+	m->fd = 0;
 	return(0);
 }
 

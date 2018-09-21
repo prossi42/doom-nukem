@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readfile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/02 11:30:47 by prossi            #+#    #+#             */
-/*   Updated: 2017/05/27 03:47:35 by prossi           ###   ########.fr       */
+/*   Updated: 2018/09/21 00:42:08 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ char	*ft_readfile(int fd)
 	{
 		if (ret == -1)
 		{
-			ft_putstr("It's the end of our journey, no map, no job !\n\n");
-			ft_putstr("Deal with it !");
-			exit(-1);
+			ft_putendl("\nNothing to read\n");
+			return(NULL);
 		}
 		buf[ret] = '\0';
 		tmp = ft_strcat(tmp, buf);

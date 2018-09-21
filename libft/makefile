@@ -38,7 +38,8 @@ SRC_NAME_OFF = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 			   ft_lstadd.c ft_lstiter.c ft_lstmap.c
 
 SRC_NAME_PIMP = ft_openfile.c ft_readfile.c ft_closefile.c get_next_line.c \
-				ft_realloc_free.c ft_strjoin_free.c ft_tabint.c ft_strcat_lin.c
+				ft_realloc_free.c ft_strjoin_free.c ft_tabint.c \
+				ft_strcat_lin.c xml_parser.c
 
 SRC_NAME_GRAPH = aa.c awklm_string_put.c bb.c cc.c colons.c dd.c dot.c \
 draw_high_letter.c ee.c eight.c empty_box.c exclamation.c ff.c five.c four.c \

@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 16:24:50 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 11:15:55 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/21 00:48:48 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int		main(int argc, char **argv)
 		main_error(1, m);
 	if (struct_init(m) == -1)
 		main_error(2, m);
-	if (get_env(m, 0) == -1)
+	if (get_env(m) == -1)
 		main_error(3, m);
-	mlx_processes(m);
+	// mlx_processes(m);
 	return(0);
 }
