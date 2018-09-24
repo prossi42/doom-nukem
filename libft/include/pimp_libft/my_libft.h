@@ -6,7 +6,7 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:14:38 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/21 02:32:52 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/24 02:03:59 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct				s_xmlchild
 {
 	struct s_xmlchild		*prev;
 	t_xmlsubchild			*sc;
+	t_xmlsubchild			*tmp;
 	char					*name;
 	int						n;
 	struct s_xmlchild		*next;
@@ -46,6 +47,7 @@ typedef struct				s_xmlroot
 {
 	struct s_xmlroot		*prev;
 	t_xmlchild				*c;
+	t_xmlchild				*tmp;
 	char					*name;
 	int						n;
 	struct s_xmlroot		*next;
@@ -54,6 +56,7 @@ typedef struct				s_xmlroot
 typedef struct				s_xml
 {
 	t_xmlroot				*r;
+	t_xmlroot				*tmp;
 	int						n_root;
 	int						n_child;
 	int						n_schild;
@@ -67,6 +70,8 @@ char		*ft_realloc_free(char *init, int len);
 char		*ft_strjoin_free(char *s1, char *s2, int option);
 int			**ft_tabint(int x, int y);
 char		*ft_strcat_lin(char *begin, char *end);
-t_xml		xml_parser(char *buf);
+char		*xml_parser(char *buf, t_xml *xml, int option);
+void		reboot_xml_root(t_xml *xml);
+void		xml_writer(t_xml *xml, int fd);
 
 #endif

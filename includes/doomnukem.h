@@ -33,13 +33,13 @@ typedef struct		s_env
 	int				scr_height;
 	int				scr_width;
 	int				resize_mode;
+	t_xml			xml_struct;
 }					t_env;
 
 typedef struct		s_main
 {
 	t_env			env;
 	t_mlxstuff		mlx;
-	t_xml			xml_struct;
 	char			*r_buffer;
 	int				fd;
 }					t_main;

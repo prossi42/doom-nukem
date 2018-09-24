@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 22:19:28 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/21 00:52:05 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/24 02:42:04 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,14 @@ int		get_xml_data(t_main *m)
 		return(-1);
 	m->fd = open("/home/awk-lm/Projects/doom-nukem/data/config/config.xml", O_RDONLY);
 	read(m->fd, m->r_buffer, 500);
-	ft_putendl(m->r_buffer);
-	m->xml_struct = xml_parser(m->r_buffer);
+	close(m->fd);
+	// ft_putendl(m->r_buffer);
+	xml_parser(m->r_buffer, &m->env.xml_struct, 0);
+	// xml_parser(NULL, &m->env.xml_struct, 2);
+	// ft_putendl(xml_parser("config/time/total", &m->env.xml_struct, 3));
+	xml_parser("config/time/total/100", &m->env.xml_struct, 4);
+	m->fd = open("/home/awk-lm/Projects/doom-nukem/data/config/config.xml", O_WRONLY);
+	xml_writer(&m->env.xml_struct, m->fd);
 	return(0);
 }
 
