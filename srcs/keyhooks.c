@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 09:05:26 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 12:36:37 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 17:12:32 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,35 @@
 
 void	screen_sizing_hook(t_main *m, int keycode, int option)
 {
+	char	*tmp;
+
+	tmp = NULL;
 	if (option == 0)
 	{
 		if (m->env.resize_mode == 0 && keycode == 65513)
 			m->env.resize_mode = 1;
 		else if (m->env.resize_mode == 1 && keycode == 65293)
 			m->env.resize_mode = 2;
+		else if (m->env.resize_mode == 2 && keycode == 65513)
+			m->env.resize_mode = 3;
+		else if (m->env.resize_mode == 3 && keycode == 65293)
+		{
+			m->env.resize_mode = 0;
+			tmp = ft_strcat_lin("config/screen/width/", ft_itoa(m->env.scr_width));
+			xml_parser(tmp, &m->env.xml_struct, 4, 0);
+			ft_strdel(&tmp);
+			tmp = ft_strcat_lin("config/screen/height/", ft_itoa(m->env.scr_height));
+			xml_parser(tmp, &m->env.xml_struct, 4, 0);
+			ft_strdel(&tmp);
+			xml_writer(&m->env.xml_struct, m->fd, m->env.path.config_file);
+		}
 	}
 	else if (option == 1)
 	{
 		if (keycode == 65362)
-			m->env.scr_height += 10;
-		else if (keycode == 65364)
 			m->env.scr_height -= 10;
+		else if (keycode == 65364)
+			m->env.scr_height += 10;
 		else if (keycode == 65361)
 			m->env.scr_width -= 10;
 		else if (keycode == 65363)

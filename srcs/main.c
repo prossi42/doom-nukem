@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 16:24:50 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/21 00:48:48 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 17:39:15 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 void	main_error(int error, t_main *m)
 {
-	if (error == 1)
+	if (error == 0)
 	ft_putendl("\nMain structure allocation failed\n");
-	else if (error == 0)
+	else if (error == 1)
 		ft_putendl("\nNo arguments needed by ./doom-nukem\n");
 	else if (error == 2)
 		ft_putendl("\nFailed to initialize the structure\n");
 	else if (error == 3)
-		ft_putendl("\nGet_env error / option 0");
+	{
+		ft_putendl("\nGet_env error\n");
+		error_exit(0, m);
+	}
+	else if (error == 4)
+	{
+		ft_putendl("\nSet_env error\n");
+		error_exit(1, m);
+	}
 	if (error == 0 || error == 1 || error == 2)
 		exit(-1);
-	else
-		error_exit(0, m);
 }
 
 int		main(int argc, char **argv)
@@ -41,6 +47,8 @@ int		main(int argc, char **argv)
 		main_error(2, m);
 	if (get_env(m) == -1)
 		main_error(3, m);
-	// mlx_processes(m);
+	if (set_env(m) == -1)
+		main_error(4, m);
+	mlx_processes(m);
 	return(0);
 }

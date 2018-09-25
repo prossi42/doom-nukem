@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 02:01:40 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/24 02:37:02 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/24 17:37:55 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,23 @@ void	xml_root_writer(t_xml *xml, int fd)
 	ft_putstr_fd(">\n", fd);
 }
 
-void	xml_writer(t_xml *xml, int fd)
+void	xml_writer(t_xml *xml, int fd, char *path)
 {
+	int		i;
+	char	*buf;
+
+	i = -1;
 	reboot_xml_root(xml);
+	fd = open(path, O_RDONLY);
+	buf = ft_strnew(BUFF_SIZE + 1);
+	read(fd, buf, BUFF_SIZE);
+	close(fd);
+	fd = open(path, O_WRONLY);
+	while (buf[++i])
+		ft_putstr_fd("\0", fd);
+	close(fd);
+	ft_strdel(&buf);
+	fd = open(path, O_WRONLY);
 	if (xml->r->next != NULL)
 	{
 		while (xml->r->next != NULL)

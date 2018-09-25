@@ -6,7 +6,7 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 14:24:53 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/19 17:24:07 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 18:10:50 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char			*ft_strstr(const char *big, const char *little);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int				ft_atoi(const char *str);
+long int		ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -75,7 +75,7 @@ char			*ft_strtrim(char const *s);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
-char			*ft_itoa(int n);
+char			*ft_itoa(long int n);
 int				ft_lenint(int n);
 char			*ft_strputneg(int n, char *strnb);
 char			**ft_strsplit(char const *s, char c);

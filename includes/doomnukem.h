@@ -16,9 +16,20 @@
 # include <limits.h>
 # include <time.h>
 
-# define _XOPEN_SOURCE 500
-
 # define BUFF_SIZE 0xfffff
+
+typedef struct		s_paths
+{
+	char			*path;
+	char			*data_path;
+	char			*config_path;
+	char			*config_file;
+}					t_paths;
+
+typedef struct		s_times
+{
+	time_t			launch_time;
+}					t_times;
 
 typedef struct		s_mlxstuff
 {
@@ -28,23 +39,23 @@ typedef struct		s_mlxstuff
 
 typedef struct		s_env
 {
-	Display			*display_struct;
-	Screen			*screen_struct;
 	int				scr_height;
 	int				scr_width;
 	int				resize_mode;
 	t_xml			xml_struct;
+	t_paths			path;
+	t_times			time;
 }					t_env;
 
 typedef struct		s_main
 {
 	t_env			env;
 	t_mlxstuff		mlx;
-	char			*r_buffer;
 	int				fd;
 }					t_main;
 
 int					get_env(t_main *main);
+int					set_env(t_main *m);
 void				mlx_processes(t_main *m);
 int					keyhooks(int keycode, t_main *m);
 void				escape_exit(t_main *m);

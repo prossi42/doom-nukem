@@ -6,7 +6,7 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:14:38 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/24 02:03:59 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 12:29:46 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ char		*ft_realloc_free(char *init, int len);
 char		*ft_strjoin_free(char *s1, char *s2, int option);
 int			**ft_tabint(int x, int y);
 char		*ft_strcat_lin(char *begin, char *end);
-char		*xml_parser(char *buf, t_xml *xml, int option);
+char		*xml_parser(char *buf, t_xml *xml, int option, int fd);
 void		reboot_xml_root(t_xml *xml);
-void		xml_writer(t_xml *xml, int fd);
+void		xml_writer(t_xml *xml, int fd, char *path);
 
 #endif

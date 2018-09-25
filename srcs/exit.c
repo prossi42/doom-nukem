@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 09:12:09 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 11:13:08 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 17:54:21 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,14 @@ void	escape_exit(t_main *m)
 
 void	error_exit(int option, t_main *m)
 {
-	if (option < 1)
+	if (option > 0)
 	{
-		(void)option;
-		(void)m;
+		ft_strdel(&m->env.path.path);
+		ft_strdel(&m->env.path.data_path);
+		ft_strdel(&m->env.path.config_path);
+		ft_strdel(&m->env.path.config_file);
 	}
+	if (option > -1)
+		exit(-1);
 	escape_exit(m);
 }

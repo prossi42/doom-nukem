@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/10 11:29:55 by prossi            #+#    #+#             */
-/*   Updated: 2017/02/27 12:18:31 by prossi           ###   ########.fr       */
+/*   Updated: 2018/09/25 18:11:26 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/off_libft/libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	char	*strnb;
 	int		len;
 	long	nb;
 
-	nb = (long)n;
+	nb = n;
 	len = ft_lenint(nb);
 	if (!(strnb = ft_strnew(len)))
 		return (NULL);

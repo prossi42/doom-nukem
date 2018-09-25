@@ -6,45 +6,57 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 22:19:28 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/24 02:42:04 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 17:39:45 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "doomnukem.h"
 
-int		get_xml_data(t_main *m)
+int		get_paths(t_main *m)
 {
-	if (!(m->r_buffer = ft_strnew(500)))
+	if (!(m->env.path.path = getcwd(m->env.path.path, PATH_MAX)))
 		return(-1);
-	m->fd = open("/home/awk-lm/Projects/doom-nukem/data/config/config.xml", O_RDONLY);
-	read(m->fd, m->r_buffer, 500);
-	close(m->fd);
-	// ft_putendl(m->r_buffer);
-	xml_parser(m->r_buffer, &m->env.xml_struct, 0);
-	// xml_parser(NULL, &m->env.xml_struct, 2);
-	// ft_putendl(xml_parser("config/time/total", &m->env.xml_struct, 3));
-	xml_parser("config/time/total/100", &m->env.xml_struct, 4);
-	m->fd = open("/home/awk-lm/Projects/doom-nukem/data/config/config.xml", O_WRONLY);
-	xml_writer(&m->env.xml_struct, m->fd);
+	if (!(m->env.path.data_path = ft_strcat_lin(m->env.path.path, "/data")))
+		return(-1);
+	if (!(m->env.path.config_path = ft_strcat_lin(m->env.path.data_path, "/config")))
+		return(-1);
+	if (!(m->env.path.config_file = ft_strcat_lin(m->env.path.config_path, "/config.xml")))
+		return(-1);
 	return(0);
 }
 
-int		get_screen_size(t_main *m)
+int		check_availability(t_main *m)
 {
-	if (!(m->env.display_struct = XOpenDisplay(NULL)))
+	struct stat		s_stat;
+
+	if (stat(m->env.path.data_path, &s_stat) == -1)
+		return (-1);
+	if (stat(m->env.path.config_path, &s_stat) == -1)
 		return(-1);
-	if (!(m->env.screen_struct = DefaultScreenOfDisplay(m->env.display_struct)))
+	if (stat(m->env.path.config_file, &s_stat) == -1)
 		return(-1);
-	m->env.scr_width = m->env.screen_struct->width - 50;
-	m->env.scr_height = m->env.screen_struct->height - 50;
 	return(0);
+}
+
+int		get_xml_data(t_main *m)
+{
+	xml_parser(m->env.path.config_file, &m->env.xml_struct, 0, m->fd);
+	return(0);
+}
+
+void	get_time(t_main *m)
+{
+	m->env.time.launch_time = time(NULL);
 }
 
 int		get_env(t_main *m)
 {
-	if (get_screen_size(m) == -1)
+	if (get_paths(m) == -1)
+		return(-1);
+	if (check_availability(m) == -1)
 		return(-1);
 	if (get_xml_data(m) == -1)
 		return(-1);
+	get_time(m);
 	return(0);
 }

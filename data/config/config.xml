@@ -1,10 +1,10 @@
 <config>
 	<screen>
-		<width>500</width>
-		<height>500</height>
+		<width>1360</width>
+		<height>580</height>
 	</screen>
 	<time>
-		<first>10</first>
+		<first>1537892196</first>
 		<last>20</last>
 		<total>100</total>
 	</time>

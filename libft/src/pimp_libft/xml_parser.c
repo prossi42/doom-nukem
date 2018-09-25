@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 00:20:22 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/24 01:56:25 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/25 18:06:10 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,24 +146,30 @@ int		get_child(t_xml *xml, char *buf, int i)
 	return(i);
 }
 
-void	get_root(t_xml *xml, char *buf)
+void	get_root(t_xml *xml, char *buf, int fd)
 {
 	int		since;
 	char	*tmp;
+	char	*r_buffer;
 	int		i;
 
 	since = 0;
 	tmp = NULL;
+	r_buffer = NULL;
 	i = 0;
-	while (buf[i])
+	fd = open(buf, O_RDONLY);
+	r_buffer = ft_strnew(BUFF_SIZE + 1);
+	read(fd, r_buffer, BUFF_SIZE);
+	close(fd);
+	while (r_buffer[i])
 	{
-		if (buf[i] == '<' && (i == 0 || buf[i - 1] != '\t'))
+		if (r_buffer[i] == '<' && (i == 0 || r_buffer[i - 1] != '\t'))
 		{
-			if (buf[i + 1] != '/')
+			if (r_buffer[i + 1] != '/')
 			{
-				while (buf[i++] != '>')
+				while (r_buffer[i++] != '>')
 					since++;
-				tmp = ft_strsub(buf, i - since, since - 1);
+				tmp = ft_strsub(r_buffer, i - since, since - 1);
 				since = 0;
 				if (xml->n_root != 0)
 				{
@@ -176,11 +182,12 @@ void	get_root(t_xml *xml, char *buf)
 					init_root(&xml->r, xml);
 				xml->r->name = ft_strdup(tmp);
 				ft_strdel(&tmp);
-				 i = get_child(xml, buf, i);
+				 i = get_child(xml, r_buffer, i);
 			}
 		}
 		i++;
 	}
+	// ft_strdel(&r_buffer);
 }
 
 void	reboot_xml_subchild(t_xml *xml)
@@ -279,6 +286,7 @@ char	*get_subchild_value(t_xml *xml, char *path)
 	tmp = NULL;
 	since = 0;
 	pos = 0;
+	reboot_xml_root(xml);
 	while (path[i])
 	{
 		if (path[i] == '/' || path[i + 1] == '\0')
@@ -314,7 +322,7 @@ char	*get_subchild_value(t_xml *xml, char *path)
 	return(NULL);
 }
 
-char	*get_and_replace_subchild_value(t_xml *xml, char *path)
+char	*replace_subchild_value(t_xml *xml, char *path)
 {
 	int		i;
 	int		since;
@@ -325,6 +333,7 @@ char	*get_and_replace_subchild_value(t_xml *xml, char *path)
 	tmp = NULL;
 	since = 0;
 	pos = 0;
+	reboot_xml_root(xml);
 	while (path[i])
 	{
 		if (path[i] == '/')
@@ -369,10 +378,11 @@ char	*get_and_replace_subchild_value(t_xml *xml, char *path)
 	return(NULL);
 }
 
-char	*xml_parser(char *buf, t_xml *xml, int option)
+char	*xml_parser(char *buf, t_xml *xml, int option, int fd)
 {
 	if (option == 0)
-		get_root(xml, buf);
+		get_root(xml, buf, fd);
+		// ici buf est le path du fichier xml a ouvrir
 	else if (option == 1)
 		reboot_xml_root(xml);
 	else if (option == 2)
@@ -382,8 +392,7 @@ char	*xml_parser(char *buf, t_xml *xml, int option)
 		return(get_subchild_value(xml, buf));
 		//ici le buf est une string sous ce format --> "root/child/subchild"
 	else
-		get_and_replace_subchild_value(xml, buf);
+		replace_subchild_value(xml, buf);
 		//ici le buf est une string sous ce format --> "root/child/subchild/value"
-	reboot_xml_root(xml);
 	return(NULL);
 }
