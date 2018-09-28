@@ -6,13 +6,13 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 13:16:52 by prossi            #+#    #+#             */
-/*   Updated: 2018/02/08 15:25:50 by lhermann         ###   ########.fr       */
+/*   Updated: 2018/09/28 16:18:14 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_segment_letter_td(t_stuff *e)
+void	ft_segment_letter_td(t_graph *e)
 {
 	int		i;
 
@@ -33,7 +33,7 @@ void	ft_segment_letter_td(t_stuff *e)
 	}
 }
 
-void	ft_segment_letter_sd(t_stuff *e)
+void	ft_segment_letter_sd(t_graph *e)
 {
 	int		i;
 
@@ -54,7 +54,7 @@ void	ft_segment_letter_sd(t_stuff *e)
 	}
 }
 
-void	ft_segment_letter(t_stuff *e)
+void	ft_segment_letter(t_graph *e)
 {
 	e->bs.dx = e->bs.xf - e->bs.xi;
 	e->bs.dy = e->bs.yf - e->bs.yi;

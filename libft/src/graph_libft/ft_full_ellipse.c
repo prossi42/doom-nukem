@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_full_ellipse.c                                  :+:      :+:    :+:   */
+/*   ft_full_ellipse->c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_full_ellipse(t_stuff *e, int piece, int option)
+void	ft_full_ellipse(t_graph *e, int piece, int option)
 {
 	ft_ellipse(e, piece, option);
 	while (--e->bs.width > 0)

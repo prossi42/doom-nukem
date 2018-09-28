@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ellipse.c                                       :+:      :+:    :+:   */
+/*   ft_ellipse->c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_ellipse_sd(t_stuff *e, int piece, int option)
+void	ft_ellipse_sd(t_graph *e, int piece, int option)
 {
 	e->bs.x = e->bs.width;
 	e->bs.y = 0;
@@ -34,7 +34,7 @@ void	ft_ellipse_sd(t_stuff *e, int piece, int option)
 	}
 }
 
-void	ft_ellipse(t_stuff *e, int piece, int option)
+void	ft_ellipse(t_graph *e, int piece, int option)
 {
 	e->bs.a2 = e->bs.width * e->bs.width;
 	e->bs.b2 = e->bs.height * e->bs.height;

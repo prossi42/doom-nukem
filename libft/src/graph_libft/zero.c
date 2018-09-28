@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_zero(t_stuff *e, int option)
+void	ft_init_value_zero(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -23,7 +23,7 @@ void	ft_init_value_zero(t_stuff *e, int option)
 	}
 }
 
-void	zero(t_stuff *e)
+void	zero(t_graph *e)
 {
 	ft_init_value_zero(e, 0);
 	ft_ellipse(e, 0, 0);

@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_slash(t_stuff *e, int option)
+void	ft_init_value_slash(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -37,7 +37,7 @@ void	ft_init_value_slash(t_stuff *e, int option)
 	}
 }
 
-void	slash(t_stuff *e)
+void	slash(t_graph *e)
 {
 	ft_init_value_slash(e, 0);
 	ft_segment_letter(e);

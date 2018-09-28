@@ -29,12 +29,14 @@ typedef struct		s_paths
 typedef struct		s_times
 {
 	time_t			launch_time;
+	time_t			exit_time;
 }					t_times;
 
 typedef struct		s_mlxstuff
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
+	int				n_img;
 }					t_mlxstuff;
 
 typedef struct		s_env
@@ -45,6 +47,7 @@ typedef struct		s_env
 	t_xml			xml_struct;
 	t_paths			path;
 	t_times			time;
+	int				lang;
 }					t_env;
 
 typedef struct		s_main
@@ -52,16 +55,31 @@ typedef struct		s_main
 	t_env			env;
 	t_mlxstuff		mlx;
 	int				fd;
+	t_graph			graph;
 }					t_main;
 
+			// Environment
 int					get_env(t_main *main);
 int					set_env(t_main *m);
+int					set_time(t_main *m, int option);
+int					set_struct_lang_fr(t_main *m);
+int					set_struct_lang_en(t_main *m);
+
+			// initialize
+int					struct_init(t_main *m);
+
+			// Minilibx
 void				mlx_processes(t_main *m);
 int					keyhooks(int keycode, t_main *m);
-void				escape_exit(t_main *m);
-int					struct_init(t_main *m);
-void				error_exit(int option, t_main *m);
 void				mlx_create_windows(t_main *m);
+
+			// Resize_mode
+void				resize_mode(t_main *m, int keycode, int option);
+
+
+			// Exit
+void				escape_exit(t_main *m);
+void				error_exit(int option, t_main *m);
 
 
 

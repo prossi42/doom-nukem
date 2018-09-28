@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_two_fih(t_stuff *e, int option)
+void	ft_init_value_two_fih(t_graph *e, int option)
 {
 	if (option == 12)
 	{
@@ -30,7 +30,7 @@ void	ft_init_value_two_fih(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_value_two_fh(t_stuff *e, int option)
+void	ft_init_value_two_fh(t_graph *e, int option)
 {
 	if (option == 9)
 	{
@@ -56,7 +56,7 @@ void	ft_init_value_two_fh(t_stuff *e, int option)
 	ft_init_value_two_fih(e, option);
 }
 
-void	ft_init_value_two_td(t_stuff *e, int option)
+void	ft_init_value_two_td(t_graph *e, int option)
 {
 	if (option == 6)
 	{
@@ -81,7 +81,7 @@ void	ft_init_value_two_td(t_stuff *e, int option)
 	ft_init_value_two_fh(e, option);
 }
 
-void	ft_init_value_two_sd(t_stuff *e, int option)
+void	ft_init_value_two_sd(t_graph *e, int option)
 {
 	if (option == 3)
 	{
@@ -107,7 +107,7 @@ void	ft_init_value_two_sd(t_stuff *e, int option)
 	ft_init_value_two_td(e, option);
 }
 
-void	ft_init_value_two(t_stuff *e, int option)
+void	ft_init_value_two(t_graph *e, int option)
 {
 	if (option == 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 08:57:53 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/20 17:04:38 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/27 18:56:50 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	mlx_create_windows(t_main *m)
 {
 	m->mlx.win_ptr = mlx_new_window(m->mlx.mlx_ptr, m->env.scr_width, m->env.scr_height,\
 			"Doom-Nukem");
+	if (m->env.resize_mode == 1)
+		resize_mode(m, 0, 0);
 	mlx_hook(m->mlx.win_ptr, 2, (1L << 0), keyhooks, m);
 }
 

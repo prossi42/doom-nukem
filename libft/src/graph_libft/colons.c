@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_colons(t_stuff *e, int option)
+void	ft_init_value_colons(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -28,7 +28,7 @@ void	ft_init_value_colons(t_stuff *e, int option)
 	}
 }
 
-void	colons(t_stuff *e)
+void	colons(t_graph *e)
 {
 	ft_init_value_colons(e, 0);
 	ft_arc(e, 9);

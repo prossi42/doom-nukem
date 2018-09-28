@@ -6,13 +6,13 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 09:32:09 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/19 18:12:50 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/28 16:17:04 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	a(t_stuff *e)
+void	a(t_graph *e)
 {
 	ft_init_segment_a(e, 0);
 	ft_segment_letter(e);

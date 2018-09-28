@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_segment_g_sd(t_stuff *e, int option)
+void	ft_init_segment_g_sd(t_graph *e, int option)
 {
 	if (option == 3)
 	{
@@ -30,7 +30,7 @@ void	ft_init_segment_g_sd(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_segment_g(t_stuff *e, int option)
+void	ft_init_segment_g(t_graph *e, int option)
 {
 	if (option == 1)
 	{
@@ -49,7 +49,7 @@ void	ft_init_segment_g(t_stuff *e, int option)
 	ft_init_segment_g_sd(e, option);
 }
 
-void	g(t_stuff *e)
+void	g(t_graph *e)
 {
 	ft_init_segment_g(e, 1);
 	ft_ellipse(e, 2, 1);

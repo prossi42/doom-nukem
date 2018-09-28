@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 17:22:31 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/19 18:29:36 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/28 16:17:13 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../off_libft/libft.h"
 # include "../pimp_libft/my_libft.h"
+# include "../../../minilibx/minilibx_linux/includes/mlx.h"
 
 typedef struct		s_mlx
 {
@@ -33,6 +34,10 @@ typedef struct		s_mlx
 typedef struct		s_images
 {
 	t_mlx			*mlx;
+	t_mlx			*tmp;
+	int				n_img;
+	int				img_x;
+	int				img_y;
 }					t_images;
 
 typedef struct		s_letter
@@ -70,76 +75,77 @@ typedef struct		s_bres
 	int				y;
 }					t_bres;
 
-typedef	struct		s_stuff
+typedef	struct		s_graph
 {
 	t_letter		lt;
 	t_bres			bs;
 	t_images		i;
-}					t_stuff;
+}					t_graph;
 
-void				a(t_stuff *e);
-void				b(t_stuff *e);
-void				c(t_stuff *e);
-void				d(t_stuff *e);
-void				ee(t_stuff *e);
-void				f(t_stuff *e);
-void				g(t_stuff *e);
-void				h(t_stuff *e);
-void				i(t_stuff *e);
-void				j(t_stuff *e);
-void				k(t_stuff *e);
-void				l(t_stuff *e);
-void				m(t_stuff *e);
-void				n(t_stuff *e);
-void				o(t_stuff *e);
-void				p(t_stuff *e);
-void				q(t_stuff *e);
-void				r(t_stuff *e);
-void				s(t_stuff *e);
-void				t(t_stuff *e);
-void				u(t_stuff *e);
-void				v(t_stuff *e);
-void				w(t_stuff *e);
-void				x(t_stuff *e);
-void				y(t_stuff *e);
-void				z(t_stuff *e);
-void				zero(t_stuff *e);
-void				one(t_stuff *e);
-void				two(t_stuff *e);
-void				three(t_stuff *e);
-void				four(t_stuff *e);
-void				five(t_stuff *e);
-void				six(t_stuff *e);
-void				seven(t_stuff *e);
-void				eight(t_stuff *e);
-void				nine(t_stuff *e);
-void				dot(t_stuff *e);
-void				minus(t_stuff *e);
-void				colons(t_stuff *e);
-void				slash(t_stuff *e);
-void				hashtag(t_stuff *e);
-void				exclamation(t_stuff *e);
-void				ft_segment_letter(t_stuff *e);
-void				ft_arc(t_stuff *e, int option);
-void				awklm_string_put(char *str, t_stuff *e);
-void				ft_ellipse(t_stuff *e, int piece, int option);
-void				settings(t_stuff *e);
-void				full_box(t_stuff *e);
-void				empty_box(t_stuff *e);
-void				ft_full_ellipse(t_stuff *e, int piece, int option);
-void				ft_full_arc(t_stuff *e, int option);
-void				ft_init_segment_a(t_stuff *e, int option);
-void				ft_init_segment_b(t_stuff *e, int option);
-void				ft_init_segment_e(t_stuff *e, int option);
-void				draw_high_letter(t_stuff *e);
-void				ft_arc_sd(t_stuff *e, int option, int x, int y);
-void				select_part_height_sd(t_stuff *e, int x, int y, int option);
-void				select_part_height(t_stuff *e, int x, int y, int option);
-void				select_part_width_sd(t_stuff *e, int x, int y, int option);
-void				select_part_width(t_stuff *e, int x, int y, int option);
-void				ft_init_value_settings(t_stuff *e, int option);
-void				ft_init_value_two(t_stuff *e, int option);
+void				a(t_graph *e);
+void				b(t_graph *e);
+void				c(t_graph *e);
+void				d(t_graph *e);
+void				ee(t_graph *e);
+void				f(t_graph *e);
+void				g(t_graph *e);
+void				h(t_graph *e);
+void				i(t_graph *e);
+void				j(t_graph *e);
+void				k(t_graph *e);
+void				l(t_graph *e);
+void				m(t_graph *e);
+void				n(t_graph *e);
+void				o(t_graph *e);
+void				p(t_graph *e);
+void				q(t_graph *e);
+void				r(t_graph *e);
+void				s(t_graph *e);
+void				t(t_graph *e);
+void				u(t_graph *e);
+void				v(t_graph *e);
+void				w(t_graph *e);
+void				x(t_graph *e);
+void				y(t_graph *e);
+void				z(t_graph *e);
+void				zero(t_graph *e);
+void				one(t_graph *e);
+void				two(t_graph *e);
+void				three(t_graph *e);
+void				four(t_graph *e);
+void				five(t_graph *e);
+void				six(t_graph *e);
+void				seven(t_graph *e);
+void				eight(t_graph *e);
+void				nine(t_graph *e);
+void				dot(t_graph *e);
+void				minus(t_graph *e);
+void				colons(t_graph *e);
+void				slash(t_graph *e);
+void				hashtag(t_graph *e);
+void				exclamation(t_graph *e);
+void				ft_segment_letter(t_graph *e);
+void				ft_arc(t_graph *e, int option);
+void				awklm_string_put(char *str, t_graph *e);
+void				ft_ellipse(t_graph *e, int piece, int option);
+void				settings(t_graph *e);
+void				full_box(t_graph *e);
+void				empty_box(t_graph *e);
+void				ft_full_ellipse(t_graph *e, int piece, int option);
+void				ft_full_arc(t_graph *e, int option);
+void				ft_init_segment_a(t_graph *e, int option);
+void				ft_init_segment_b(t_graph *e, int option);
+void				ft_init_segment_e(t_graph *e, int option);
+void				draw_high_letter(t_graph *e);
+void				ft_arc_sd(t_graph *e, int option, int x, int y);
+void				select_part_height_sd(t_graph *e, int x, int y, int option);
+void				select_part_height(t_graph *e, int x, int y, int option);
+void				select_part_width_sd(t_graph *e, int x, int y, int option);
+void				select_part_width(t_graph *e, int x, int y, int option);
+void				ft_init_value_settings(t_graph *e, int option);
+void				ft_init_value_two(t_graph *e, int option);
 void				pixel_put_to_img(t_mlx **mlx, int x, int y, int color);
+int					mlx_img(t_graph *e, int option, int nmail, void *mlx_ptr);
 
 
 #endif

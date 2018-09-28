@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_segment_e.c                                   :+:      :+:    :+:   */
+/*   init_segment_e->c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_segment_e_fh(t_stuff *e, int option)
+void	ft_init_segment_e_fh(t_graph *e, int option)
 {
 	if (option == 10)
 	{
@@ -37,7 +37,7 @@ void	ft_init_segment_e_fh(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_segment_e_td(t_stuff *e, int option)
+void	ft_init_segment_e_td(t_graph *e, int option)
 {
 	if (option == 7)
 	{
@@ -63,7 +63,7 @@ void	ft_init_segment_e_td(t_stuff *e, int option)
 	ft_init_segment_e_fh(e, option);
 }
 
-void	ft_init_segment_e_sd(t_stuff *e, int option)
+void	ft_init_segment_e_sd(t_graph *e, int option)
 {
 	if (option == 4)
 	{
@@ -89,7 +89,7 @@ void	ft_init_segment_e_sd(t_stuff *e, int option)
 	ft_init_segment_e_td(e, option);
 }
 
-void	ft_init_segment_e(t_stuff *e, int option)
+void	ft_init_segment_e(t_graph *e, int option)
 {
 	if (option == 1)
 	{

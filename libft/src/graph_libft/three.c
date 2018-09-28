@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   three.c                                            :+:      :+:    :+:   */
+/*   three->c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_three(t_stuff *e, int option)
+void	ft_init_value_three(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -30,7 +30,7 @@ void	ft_init_value_three(t_stuff *e, int option)
 	}
 }
 
-void	three(t_stuff *e)
+void	three(t_graph *e)
 {
 	ft_init_value_three(e, 0);
 	ft_ellipse(e, 2, 2);

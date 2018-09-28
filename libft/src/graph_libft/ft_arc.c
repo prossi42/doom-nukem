@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_arc_option_fh(t_stuff *e, int option, int x, int y)
+void	ft_arc_option_fh(t_graph *e, int option, int x, int y)
 {
 	if (option == 8)
 	{
@@ -37,7 +37,7 @@ void	ft_arc_option_fh(t_stuff *e, int option, int x, int y)
 	}
 }
 
-void	ft_arc_option_td(t_stuff *e, int option, int x, int y)
+void	ft_arc_option_td(t_graph *e, int option, int x, int y)
 {
 	if (option == 5)
 	{
@@ -63,7 +63,7 @@ void	ft_arc_option_td(t_stuff *e, int option, int x, int y)
 	ft_arc_option_fh(e, option, x, y);
 }
 
-void	ft_arc_option_sd(t_stuff *e, int option, int x, int y)
+void	ft_arc_option_sd(t_graph *e, int option, int x, int y)
 {
 	if (option == 3)
 	{
@@ -90,7 +90,7 @@ void	ft_arc_option_sd(t_stuff *e, int option, int x, int y)
 	ft_arc_option_td(e, option, x, y);
 }
 
-void	ft_arc_option(t_stuff *e, int option, int x, int y)
+void	ft_arc_option(t_graph *e, int option, int x, int y)
 {
 	if (option == 1)
 	{
@@ -117,7 +117,7 @@ void	ft_arc_option(t_stuff *e, int option, int x, int y)
 	ft_arc_option_sd(e, option, x, y);
 }
 
-void	ft_arc(t_stuff *e, int option)
+void	ft_arc(t_graph *e, int option)
 {
 	int		x;
 	int		y;

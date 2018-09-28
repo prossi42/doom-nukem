@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_hashtag_fh(t_stuff *e, int option)
+void	ft_init_value_hashtag_fh(t_graph *e, int option)
 {
 	if (option == 9)
 	{
@@ -37,7 +37,7 @@ void	ft_init_value_hashtag_fh(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_value_hashtag_td(t_stuff *e, int option)
+void	ft_init_value_hashtag_td(t_graph *e, int option)
 {
 	if (option == 6)
 	{
@@ -63,7 +63,7 @@ void	ft_init_value_hashtag_td(t_stuff *e, int option)
 	ft_init_value_hashtag_fh(e, option);
 }
 
-void	ft_init_value_hashtag_sd(t_stuff *e, int option)
+void	ft_init_value_hashtag_sd(t_graph *e, int option)
 {
 	if (option == 3)
 	{
@@ -89,7 +89,7 @@ void	ft_init_value_hashtag_sd(t_stuff *e, int option)
 	ft_init_value_hashtag_td(e, option);
 }
 
-void	ft_init_value_hashtag(t_stuff *e, int option)
+void	ft_init_value_hashtag(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -115,7 +115,7 @@ void	ft_init_value_hashtag(t_stuff *e, int option)
 	ft_init_value_hashtag_sd(e, option);
 }
 
-void	hashtag(t_stuff *e)
+void	hashtag(t_graph *e)
 {
 	ft_init_value_hashtag(e, 0);
 	ft_segment_letter(e);

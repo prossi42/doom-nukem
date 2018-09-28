@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   five.c                                             :+:      :+:    :+:   */
+/*   five->c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_five_td(t_stuff *e, int option)
+void	ft_init_value_five_td(t_graph *e, int option)
 {
 	if (option == 6)
 	{
@@ -23,7 +23,7 @@ void	ft_init_value_five_td(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_value_five_sd(t_stuff *e, int option)
+void	ft_init_value_five_sd(t_graph *e, int option)
 {
 	if (option == 3)
 	{
@@ -49,7 +49,7 @@ void	ft_init_value_five_sd(t_stuff *e, int option)
 	ft_init_value_five_td(e, option);
 }
 
-void	ft_init_value_five(t_stuff *e, int option)
+void	ft_init_value_five(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -75,7 +75,7 @@ void	ft_init_value_five(t_stuff *e, int option)
 	ft_init_value_five_sd(e, option);
 }
 
-void	five(t_stuff *e)
+void	five(t_graph *e)
 {
 	ft_init_value_five(e, 0);
 	ft_ellipse(e, 1, 4);

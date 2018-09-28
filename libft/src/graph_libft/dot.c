@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_dot_sd(t_stuff *e, int option)
+void	ft_init_value_dot_sd(t_graph *e, int option)
 {
 	if (option == 3)
 	{
@@ -30,7 +30,7 @@ void	ft_init_value_dot_sd(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_value_dot(t_stuff *e, int option)
+void	ft_init_value_dot(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -56,7 +56,7 @@ void	ft_init_value_dot(t_stuff *e, int option)
 	ft_init_value_dot_sd(e, option);
 }
 
-void	dot(t_stuff *e)
+void	dot(t_graph *e)
 {
 	ft_init_value_dot(e, 0);
 	ft_segment_letter(e);

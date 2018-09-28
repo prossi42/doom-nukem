@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:05:54 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/25 18:05:35 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/09/27 18:39:32 by awk-lm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		struct_init_mlxstuff(t_main *m)
 {
 	m->mlx.mlx_ptr = NULL;
 	m->mlx.mlx_ptr = NULL;
+	m->mlx.n_img = 0;
 	return(0);
 }
 
@@ -31,6 +32,9 @@ int		struct_init_env(t_main *m)
 	m->env.path.data_path = NULL;
 	m->env.path.config_path = NULL;
 	m->env.path.config_file = NULL;
+	m->env.time.launch_time = 0;
+	m->env.time.exit_time = 0;
+	m->env.lang = 0;
 	return(0);
 }
 

@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	select_part_height_sd(t_stuff *e, int x, int y, int option)
+void	select_part_height_sd(t_graph *e, int x, int y, int option)
 {
 	if (option == 3)
 		pixel_put_to_img(&e->i.mlx, e->bs.x_arc - x, e->bs.y_arc - y, \
@@ -28,7 +28,7 @@ void	select_part_height_sd(t_stuff *e, int x, int y, int option)
 			e->lt.couleur);
 }
 
-void	select_part_height(t_stuff *e, int x, int y, int option)
+void	select_part_height(t_graph *e, int x, int y, int option)
 {
 	if (option == 0)
 	{
@@ -57,7 +57,7 @@ void	select_part_height(t_stuff *e, int x, int y, int option)
 	}
 }
 
-void	select_part_width_sd(t_stuff *e, int x, int y, int option)
+void	select_part_width_sd(t_graph *e, int x, int y, int option)
 {
 	if (option == 3)
 		pixel_put_to_img(&e->i.mlx, e->bs.x_arc - x, e->bs.y_arc - y, \
@@ -73,7 +73,7 @@ void	select_part_width_sd(t_stuff *e, int x, int y, int option)
 			e->lt.couleur);
 }
 
-void	select_part_width(t_stuff *e, int x, int y, int option)
+void	select_part_width(t_graph *e, int x, int y, int option)
 {
 	if (option == 0)
 	{

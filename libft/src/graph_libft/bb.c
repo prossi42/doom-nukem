@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	b_sd(t_stuff *e)
+void	b_sd(t_graph *e)
 {
 	e->bs.width--;
 	e->bs.height--;
@@ -35,7 +35,7 @@ void	b_sd(t_stuff *e)
 	ft_ellipse(e, 1, 6);
 }
 
-void	b(t_stuff *e)
+void	b(t_graph *e)
 {
 	ft_init_segment_b(e, 1);
 	ft_segment_letter(e);

@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	draw_numbers(t_stuff *e)
+void	draw_numbers(t_graph *e)
 {
 	if (e->lt.charac == '0')
 		zero(e);
@@ -36,7 +36,7 @@ void	draw_numbers(t_stuff *e)
 		nine(e);
 }
 
-void	draw_sign(t_stuff *e)
+void	draw_sign(t_graph *e)
 {
 	if (e->lt.charac == '.')
 		dot(e);
@@ -52,7 +52,7 @@ void	draw_sign(t_stuff *e)
 		exclamation(e);
 }
 
-void	draw_letter(t_stuff *e)
+void	draw_letter(t_graph *e)
 {
 	if ((e->lt.charac >= 65 && e->lt.charac <= 90) || (e->lt.charac >= 97 && \
 		e->lt.charac <= 122))
@@ -64,7 +64,7 @@ void	draw_letter(t_stuff *e)
 		draw_sign(e);
 }
 
-void	awklm_string_put(char *str, t_stuff *e)
+void	awklm_string_put(char *str, t_graph *e)
 {
 	int		i;
 	double	tmp_coeff;

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   one.c                                              :+:      :+:    :+:   */
+/*   one->c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_one_sd(t_stuff *e, int option)
+void	ft_init_value_one_sd(t_graph *e, int option)
 {
 	if (option == 3)
 	{
@@ -37,7 +37,7 @@ void	ft_init_value_one_sd(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_value_one(t_stuff *e, int option)
+void	ft_init_value_one(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -63,7 +63,7 @@ void	ft_init_value_one(t_stuff *e, int option)
 	ft_init_value_one_sd(e, option);
 }
 
-void	one(t_stuff *e)
+void	one(t_graph *e)
 {
 	ft_init_value_one(e, 0);
 	ft_segment_letter(e);

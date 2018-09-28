@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nine.c                                             :+:      :+:    :+:   */
+/*   nine->c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_nine_sd(t_stuff *e, int option)
+void	ft_init_value_nine_sd(t_graph *e, int option)
 {
 	if (option == 2)
 	{
@@ -30,7 +30,7 @@ void	ft_init_value_nine_sd(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_value_nine(t_stuff *e, int option)
+void	ft_init_value_nine(t_graph *e, int option)
 {
 	if (option == 0)
 	{
@@ -48,7 +48,7 @@ void	ft_init_value_nine(t_stuff *e, int option)
 	ft_init_value_nine_sd(e, option);
 }
 
-void	nine(t_stuff *e)
+void	nine(t_graph *e)
 {
 	ft_init_value_nine(e, 0);
 	ft_arc(e, 9);

@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_arc_sd_option_sd(t_stuff *e, int option, int x, int y)
+void	ft_arc_sd_option_sd(t_graph *e, int option, int x, int y)
 {
 	if (option == 12)
 	{
@@ -30,7 +30,7 @@ void	ft_arc_sd_option_sd(t_stuff *e, int option, int x, int y)
 	}
 }
 
-void	ft_arc_sd_option(t_stuff *e, int option, int x, int y)
+void	ft_arc_sd_option(t_graph *e, int option, int x, int y)
 {
 	if (option == 9)
 	{
@@ -54,7 +54,7 @@ void	ft_arc_sd_option(t_stuff *e, int option, int x, int y)
 	ft_arc_sd_option_sd(e, option, x, y);
 }
 
-void	ft_arc_sd(t_stuff *e, int option, int x, int y)
+void	ft_arc_sd(t_graph *e, int option, int x, int y)
 {
 	ft_arc_sd_option(e, option, x, y);
 	ft_arc_sd_option_sd(e, option, x, y);

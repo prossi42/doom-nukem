@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_full_arc(t_stuff *e, int option)
+void	ft_full_arc(t_graph *e, int option)
 {
 	ft_arc(e, option);
 	while (--e->bs.ray_arc > 0)

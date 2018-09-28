@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	settings_sd(t_stuff *e)
+void	settings_sd(t_graph *e)
 {
 	ft_init_value_settings(e, 7);
 	ft_segment_letter(e);
@@ -34,7 +34,7 @@ void	settings_sd(t_stuff *e)
 		ft_arc(e, 9);
 }
 
-void	settings(t_stuff *e)
+void	settings(t_graph *e)
 {
 	ft_init_value_settings(e, 0);
 	ft_segment_letter(e);

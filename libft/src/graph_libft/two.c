@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	two(t_stuff *e)
+void	two(t_graph *e)
 {
 	ft_init_value_two(e, 7);
 	ft_arc(e, 3);

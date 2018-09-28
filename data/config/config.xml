@@ -1,11 +1,17 @@
 <config>
 	<screen>
-		<width>1360</width>
-		<height>580</height>
+		<set>no</set>
+		<width>520</width>
+		<height>500</height>
 	</screen>
 	<time>
 		<first>1537892196</first>
-		<last>20</last>
-		<total>100</total>
+		<last>1</last>
+		<total>577</total>
 	</time>
+	<lang>
+		<lang>english</lang>
+	</lang>
 </config>
+
+

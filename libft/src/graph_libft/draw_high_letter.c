@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	draw_high_letter_td(t_stuff *e)
+void	draw_high_letter_td(t_graph *e)
 {
 	if (e->lt.charac == 'R' || e->lt.charac == 'r')
 		r(e);
@@ -34,7 +34,7 @@ void	draw_high_letter_td(t_stuff *e)
 		z(e);
 }
 
-void	draw_high_letter_sd(t_stuff *e)
+void	draw_high_letter_sd(t_graph *e)
 {
 	if (e->lt.charac == 'K' || e->lt.charac == 'k')
 		k(e);
@@ -54,7 +54,7 @@ void	draw_high_letter_sd(t_stuff *e)
 		draw_high_letter_td(e);
 }
 
-void	draw_high_letter(t_stuff *e)
+void	draw_high_letter(t_graph *e)
 {
 	if (e->lt.charac == 'A' || e->lt.charac == 'a')
 		a(e);

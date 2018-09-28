@@ -12,7 +12,7 @@
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_segment_w_fh(t_stuff *e, int option)
+void	ft_init_segment_w_fh(t_graph *e, int option)
 {
 	if (option == 10)
 	{
@@ -37,7 +37,7 @@ void	ft_init_segment_w_fh(t_stuff *e, int option)
 	}
 }
 
-void	ft_init_segment_w_td(t_stuff *e, int option)
+void	ft_init_segment_w_td(t_graph *e, int option)
 {
 	if (option == 7)
 	{
@@ -63,7 +63,7 @@ void	ft_init_segment_w_td(t_stuff *e, int option)
 	ft_init_segment_w_fh(e, option);
 }
 
-void	ft_init_segment_w_sd(t_stuff *e, int option)
+void	ft_init_segment_w_sd(t_graph *e, int option)
 {
 	if (option == 4)
 	{
@@ -89,7 +89,7 @@ void	ft_init_segment_w_sd(t_stuff *e, int option)
 	ft_init_segment_w_td(e, option);
 }
 
-void	ft_init_segment_w(t_stuff *e, int option)
+void	ft_init_segment_w(t_graph *e, int option)
 {
 	if (option == 1)
 	{
@@ -115,7 +115,7 @@ void	ft_init_segment_w(t_stuff *e, int option)
 	ft_init_segment_w_sd(e, option);
 }
 
-void	w(t_stuff *e)
+void	w(t_graph *e)
 {
 	ft_init_segment_w(e, 1);
 	ft_segment_letter(e);
