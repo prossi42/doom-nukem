@@ -66,15 +66,15 @@ void	ft_init_segment_t(t_graph *e, int option)
 void	t(t_graph *e)
 {
 	ft_init_segment_t(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_t(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_t(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_t(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_t(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_t(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

@@ -66,15 +66,15 @@ void	ft_init_value_exclamation(t_graph *e, int option)
 void	exclamation(t_graph *e)
 {
 	ft_init_value_exclamation(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_exclamation(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_exclamation(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_exclamation(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_exclamation(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_exclamation(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

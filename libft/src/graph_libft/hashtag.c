@@ -118,27 +118,27 @@ void	ft_init_value_hashtag(t_graph *e, int option)
 void	hashtag(t_graph *e)
 {
 	ft_init_value_hashtag(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 8);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 9);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 10);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_hashtag(e, 11);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

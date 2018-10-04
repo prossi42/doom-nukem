@@ -60,9 +60,9 @@ void	q(t_graph *e)
 	e->bs.height--;
 	ft_ellipse(e, 0, 0);
 	ft_init_segment_q(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_q(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_q(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

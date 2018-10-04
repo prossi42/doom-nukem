@@ -48,7 +48,8 @@ ft_init_value_settings.c ft_init_value_two.c ft_segment.c full_box.c gg.c \
 hashtag.c hh.c ii.c init_segment_a.c init_segment_b.c \
 init_segment_e.c jj.c kk.c ll.c minus.c mm.c nine.c nn.c one.c oo.c pp.c \
 qq.c rr.c settings.c seven.c six.c slash.c ss.c three.c tt.c two.c uu.c vv.c \
-ww.c xx.c yy.c zero.c zz.c mlx_img.c pixel_put_to_img.c
+ww.c xx.c yy.c zero.c zz.c mlx_img.c pixel_put_to_img.c draw_resize.c \
+ft_ellipse_select_part.c draw_directional_arrows.c
 
 OBJ_PATH_OFF = obj/
 

@@ -78,17 +78,17 @@ void	ft_init_segment_u(t_graph *e, int option)
 void	u_sd(t_graph *e)
 {
 	ft_init_segment_u(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_u(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_u(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_u(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_u(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_u(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 }
 
 void	u(t_graph *e)

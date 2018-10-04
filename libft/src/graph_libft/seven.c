@@ -92,21 +92,21 @@ void	ft_init_value_seven(t_graph *e, int option)
 void	seven(t_graph *e)
 {
 	ft_init_value_seven(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_seven(e, 8);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

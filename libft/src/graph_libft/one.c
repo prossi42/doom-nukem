@@ -66,15 +66,15 @@ void	ft_init_value_one(t_graph *e, int option)
 void	one(t_graph *e)
 {
 	ft_init_value_one(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_one(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_one(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_one(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_one(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_one(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

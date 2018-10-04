@@ -59,13 +59,13 @@ void	ft_init_value_minus(t_graph *e, int option)
 void	minus(t_graph *e)
 {
 	ft_init_value_minus(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_minus(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_minus(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_minus(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_minus(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

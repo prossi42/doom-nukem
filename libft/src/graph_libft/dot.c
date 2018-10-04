@@ -59,13 +59,13 @@ void	ft_init_value_dot(t_graph *e, int option)
 void	dot(t_graph *e)
 {
 	ft_init_value_dot(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_dot(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_dot(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_dot(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_dot(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

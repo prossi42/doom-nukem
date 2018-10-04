@@ -52,11 +52,11 @@ void	ft_init_value_empty_box(t_graph *e, int option)
 void	empty_box(t_graph *e)
 {
 	ft_init_value_empty_box(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_empty_box(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_empty_box(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_empty_box(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

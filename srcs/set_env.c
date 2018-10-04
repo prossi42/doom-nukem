@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 11:46:41 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/27 16:27:36 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/10/04 01:58:54 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int		set_screen_size(t_main *m)
 	if (ft_strcmp(xml_parser("config/screen/set", &m->env.xml_struct, 3, 0), "no") == 0)
 	{
 		m->env.resize_mode = 1;
-		m->env.scr_width = 500;
-		m->env.scr_height = 500;
+		m->env.scr_width = 1280;
+		m->env.scr_height = 720;
 	}
 	else
 	{
@@ -81,10 +81,10 @@ int		set_struct_lang(t_main *m, int lang)
 int		set_lang(t_main *m)
 {
 	if (ft_strcmp("english", xml_parser("config/lang/lang", &m->env.xml_struct, 3, 0)) == 0)
-		m->env.lang = 0;
+		m->env.lang_value = 0;
 	else if (ft_strcmp("french", xml_parser("config/lang/lang", &m->env.xml_struct, 3, 0)) == 0)
-		m->env.lang = 0;
-	if (set_struct_lang(m, m->env.lang) == -1)
+		m->env.lang_value = 1;
+	if (set_struct_lang(m, m->env.lang_value) == -1)
 		return(-1);
 	return(0);
 }

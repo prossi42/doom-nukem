@@ -40,9 +40,9 @@ void	ft_init_value_slash(t_graph *e, int option)
 void	slash(t_graph *e)
 {
 	ft_init_value_slash(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_slash(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_slash(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

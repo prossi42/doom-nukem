@@ -52,11 +52,11 @@ void	ft_init_segment_p(t_graph *e, int option)
 void	p(t_graph *e)
 {
 	ft_init_segment_p(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_p(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_p(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_p(e, 4);
 	ft_ellipse(e, 2, 2);
 	ft_ellipse(e, 1, 4);

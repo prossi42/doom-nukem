@@ -33,10 +33,10 @@ void	ft_init_value_full_box(t_graph *e, int option)
 void	full_box(t_graph *e)
 {
 	ft_init_value_full_box(e, 0);
-	ft_segment_letter(e);
+	ft_segment(e);
 	while (e->lt.posy - e->bs.yi < e->bs.height * e->lt.coeff)
 	{
 		ft_init_value_full_box(e, 1);
-		ft_segment_letter(e);
+		ft_segment(e);
 	}
 }

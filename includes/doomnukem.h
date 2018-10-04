@@ -2,10 +2,10 @@
 # define DOOMNUKEM_H
 # include "my_libs.h"
 # include "../minilibx/minilibx_linux/includes/mlx.h"
-# include <X11/Xlib.h>
+// # include <X11/Xlib.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <libssh/libssh.h>
+// # include <libssh/libssh.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
@@ -17,6 +17,12 @@
 # include <time.h>
 
 # define BUFF_SIZE 0xfffff
+
+typedef struct		s_lang
+{
+	char			*set_screen_size_a;
+	char			*set_screen_size_b;
+}					t_lang;
 
 typedef struct		s_paths
 {
@@ -46,8 +52,9 @@ typedef struct		s_env
 	int				resize_mode;
 	t_xml			xml_struct;
 	t_paths			path;
+	t_lang			lang;
 	t_times			time;
-	int				lang;
+	int				lang_value;
 }					t_env;
 
 typedef struct		s_main

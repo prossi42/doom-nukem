@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 17:22:31 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/28 16:17:13 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/10/04 00:29:44 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ typedef struct		s_bres
 	int				sigma;
 	int				x;
 	int				y;
+	int				color;
+	int				coeff;
 }					t_bres;
 
 typedef	struct		s_graph
@@ -124,7 +126,7 @@ void				colons(t_graph *e);
 void				slash(t_graph *e);
 void				hashtag(t_graph *e);
 void				exclamation(t_graph *e);
-void				ft_segment_letter(t_graph *e);
+void				ft_segment(t_graph *e);
 void				ft_arc(t_graph *e, int option);
 void				awklm_string_put(char *str, t_graph *e);
 void				ft_ellipse(t_graph *e, int piece, int option);
@@ -146,6 +148,8 @@ void				ft_init_value_settings(t_graph *e, int option);
 void				ft_init_value_two(t_graph *e, int option);
 void				pixel_put_to_img(t_mlx **mlx, int x, int y, int color);
 int					mlx_img(t_graph *e, int option, int nmail, void *mlx_ptr);
-
+void				fill_img(t_mlx **mlx, t_images *i, void *mlx_ptr);
+void				draw_resize(t_graph *e, int color);
+void				draw_directional_arrows(t_graph *e, int posx, int posy);
 
 #endif

@@ -92,21 +92,21 @@ void	ft_init_segment_y(t_graph *e, int option)
 void	y(t_graph *e)
 {
 	ft_init_segment_y(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 8);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_y(e, 9);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

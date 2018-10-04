@@ -89,15 +89,15 @@ void	j(t_graph *e)
 	ft_ellipse(e, 2, 4);
 	ft_ellipse(e, 1, 5);
 	ft_init_segment_j(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_j(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_j(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_j(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_j(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_j(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

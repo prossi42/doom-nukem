@@ -90,15 +90,15 @@ void	five(t_graph *e)
 	ft_ellipse(e, 1, 6);
 	ft_ellipse(e, 2, 2);
 	ft_init_value_five(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_five(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_five(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_five(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_five(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_five(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

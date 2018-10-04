@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:05:54 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/27 18:39:32 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/10/04 02:02:44 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,16 @@ int		struct_init_mlxstuff(t_main *m)
 	return(0);
 }
 
+int		struct_init_env_lang(t_main *m)
+{
+	m->env.lang.set_screen_size_a = NULL;
+	m->env.lang.set_screen_size_b = NULL;
+	return(0);
+}
+
 int		struct_init_env(t_main *m)
 {
+	struct_init_env_lang(m);
 	m->env.scr_height = 0;
 	m->env.scr_height = 0;
 	m->env.resize_mode = 0;
@@ -34,7 +42,7 @@ int		struct_init_env(t_main *m)
 	m->env.path.config_file = NULL;
 	m->env.time.launch_time = 0;
 	m->env.time.exit_time = 0;
-	m->env.lang = 0;
+	m->env.lang_value = 0;
 	return(0);
 }
 

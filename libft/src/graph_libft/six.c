@@ -57,9 +57,9 @@ void	six(t_graph *e)
 	e->bs.ray_arc--;
 	ft_arc(e, 9);
 	ft_init_value_six(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_six(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_six(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

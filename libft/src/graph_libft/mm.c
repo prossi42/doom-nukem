@@ -118,27 +118,27 @@ void	ft_init_segment_m(t_graph *e, int option)
 void	m(t_graph *e)
 {
 	ft_init_segment_m(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 8);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 9);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 10);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 11);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_m(e, 12);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

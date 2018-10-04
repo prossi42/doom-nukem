@@ -88,21 +88,21 @@ void	r_sd(t_graph *e)
 	ft_ellipse(e, 1, 4);
 	ft_ellipse(e, 1, 6);
 	ft_init_segment_r(e, 5);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_r(e, 6);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_r(e, 7);
-	ft_segment_letter(e);
+	ft_segment(e);
 }
 
 void	r(t_graph *e)
 {
 	ft_init_segment_r(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_r(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_r(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_r(e, 4);
 	ft_ellipse(e, 2, 2);
 	ft_ellipse(e, 1, 4);

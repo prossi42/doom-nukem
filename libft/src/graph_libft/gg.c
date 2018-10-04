@@ -66,9 +66,9 @@ void	g(t_graph *e)
 	ft_ellipse(e, 1, 0);
 	ft_ellipse(e, 2, 6);
 	ft_init_segment_g(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_g(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_g(e, 4);
-	ft_segment_letter(e);
+	ft_segment(e);
 }

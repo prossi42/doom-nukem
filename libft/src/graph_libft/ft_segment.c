@@ -6,13 +6,13 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 13:16:52 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/28 16:18:14 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/10/01 09:16:27 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_segment_letter_td(t_graph *e)
+void	ft_segment_td(t_graph *e)
 {
 	int		i;
 
@@ -28,12 +28,12 @@ void	ft_segment_letter_td(t_graph *e)
 			e->bs.xi += e->bs.xinc;
 		}
 		pixel_put_to_img(&e->i.mlx, e->bs.xi, e->bs.yi, \
-			e->lt.couleur);
+			e->bs.color);
 		i++;
 	}
 }
 
-void	ft_segment_letter_sd(t_graph *e)
+void	ft_segment_sd(t_graph *e)
 {
 	int		i;
 
@@ -49,12 +49,12 @@ void	ft_segment_letter_sd(t_graph *e)
 			e->bs.yi += e->bs.yinc;
 		}
 		pixel_put_to_img(&e->i.mlx, e->bs.xi, e->bs.yi, \
-			e->lt.couleur);
+			e->bs.color);
 		i++;
 	}
 }
 
-void	ft_segment_letter(t_graph *e)
+void	ft_segment(t_graph *e)
 {
 	e->bs.dx = e->bs.xf - e->bs.xi;
 	e->bs.dy = e->bs.yf - e->bs.yi;
@@ -63,11 +63,11 @@ void	ft_segment_letter(t_graph *e)
 	e->bs.dx = abs(e->bs.dx);
 	e->bs.dy = abs(e->bs.dy);
 	pixel_put_to_img(&e->i.mlx, e->bs.xi, e->bs.yi, \
-		e->lt.couleur);
+		e->bs.color);
 	if (e->bs.dx > e->bs.dy)
-		ft_segment_letter_sd(e);
+		ft_segment_sd(e);
 	else
 	{
-		ft_segment_letter_td(e);
+		ft_segment_td(e);
 	}
 }

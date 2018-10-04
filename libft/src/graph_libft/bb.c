@@ -38,11 +38,11 @@ void	b_sd(t_graph *e)
 void	b(t_graph *e)
 {
 	ft_init_segment_b(e, 1);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_b(e, 2);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_b(e, 3);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_segment_b(e, 4);
 	ft_ellipse(e, 2, 2);
 	ft_ellipse(e, 1, 4);

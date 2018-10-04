@@ -21,15 +21,15 @@ void	two(t_graph *e)
 	e->bs.ray_arc--;
 	ft_arc(e, 3);
 	ft_init_value_two(e, 8);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_two(e, 9);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_two(e, 10);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_two(e, 11);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_two(e, 12);
-	ft_segment_letter(e);
+	ft_segment(e);
 	ft_init_value_two(e, 13);
-	ft_segment_letter(e);
+	ft_segment(e);
 }
