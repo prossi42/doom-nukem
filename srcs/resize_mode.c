@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 18:12:35 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/04 02:06:50 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/06 13:36:39 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,39 +46,28 @@ void	resize_mode_hook(t_main *m, int keycode)
 	mlx_destroy_image(m->mlx.mlx_ptr, m->graph.i.mlx->img);
 	mlx_clear_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 	mlx_destroy_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
+	printf("Valeur de n_img : [%d]\n", m->graph.i.n_img);
 	mlx_create_windows(m);
 }
 
 void	write_resize_info(t_main *m)
 {
-	m->graph.lt.couleur = 0xFF0000;
-	m->graph.bs.color = 0xFF0000;
-	if (m->env.lang_value == 0)
-		m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 325;
-	else
-		m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 520;
-	m->graph.lt.posy = m->graph.i.mlx->img_y / 3;
-	m->graph.lt.coeff = 0.40;
-	m->graph.lt.space = 40;
+	resize_mode_init_values(m, 2);
 	awklm_string_put(m->env.lang.set_screen_size_a, &m->graph);
-	if (m->env.lang_value == 0)
-		m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 210;
-	else
-		m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 400;
-	m->graph.lt.posy = (m->graph.i.mlx->img_y / 3) * 2;
+	resize_mode_init_values(m, 3);
 	awklm_string_put(m->env.lang.set_screen_size_b, &m->graph);
 }
 
 void	draw_resize_on_window(t_main *m)
 {
-	m->graph.i.img_x = m->env.scr_width;
-	m->graph.i.img_y = m->env.scr_height;
+	resize_mode_init_values(m, 0);
 	if (m->graph.i.n_img == 0)
 		mlx_img(&m->graph, 0, 0, m->mlx.mlx_ptr);
 	else
 		fill_img(&m->graph.i.mlx, &m->graph.i, m->mlx.mlx_ptr);
 	draw_resize(&m->graph, 0xFFFFFF);
-	m->graph.lt.coeff = 1;
+	resize_mode_init_values(m, 1);
+	empty_box(&m->graph);
 	draw_directional_arrows(&m->graph, (m->graph.i.img_x / 2) - 30, (m->graph.i.img_y / 2) - 20);
 	write_resize_info(m);
 	mlx_put_image_to_window(m->mlx.mlx_ptr, m->mlx.win_ptr, \

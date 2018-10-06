@@ -6,7 +6,7 @@
 #    By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/13 14:28:04 by awk-lm            #+#    #+#              #
-#    Updated: 2018/09/27 18:56:43 by awk-lm           ###   ########.fr        #
+#    Updated: 2018/10/04 22:53:43 by Awklm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ MLX_DIR			:=			./minilibx
 
 SRC				:=			main.c get_env.c mlx_processes.c keyhooks.c exit.c \
 							struct_init.c set_env.c set_struct_lang_en.c \
-							set_struct_lang_fr.c resize_mode.c
+							set_struct_lang_fr.c resize_mode.c \
+							set_struct_lang_not_chosen.c choose_language_mode.c \
+							resize_mode_init_values.c choose_language_mode_init_values.c
 
 OBJ				:=			$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 NB				:=			$(words $(SRC))

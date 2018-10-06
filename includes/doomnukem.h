@@ -22,6 +22,8 @@ typedef struct		s_lang
 {
 	char			*set_screen_size_a;
 	char			*set_screen_size_b;
+	char			*set_language;
+	int				select_lang;
 }					t_lang;
 
 typedef struct		s_paths
@@ -71,6 +73,7 @@ int					set_env(t_main *m);
 int					set_time(t_main *m, int option);
 int					set_struct_lang_fr(t_main *m);
 int					set_struct_lang_en(t_main *m);
+int					set_struct_lang_not_chosen(t_main *m);
 
 			// initialize
 int					struct_init(t_main *m);
@@ -80,9 +83,12 @@ void				mlx_processes(t_main *m);
 int					keyhooks(int keycode, t_main *m);
 void				mlx_create_windows(t_main *m);
 
-			// Resize_mode
+			// Modes
 void				resize_mode(t_main *m, int keycode, int option);
-
+void				resize_mode_init_values(t_main *m, int option);
+void				choose_language_mode(t_main *m, int keycode, int option);
+void				choose_language_mode_init_values(t_main *m, int option);
+void				awklm_production_mode(t_main *m, int keycode, int option);
 
 			// Exit
 void				escape_exit(t_main *m);

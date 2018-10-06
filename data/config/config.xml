@@ -1,15 +1,16 @@
 <config>
 	<screen>
-		<set>no</set>
+		<set>yes</set>
 		<width>1920</width>
 		<height>1040</height>
 	</screen>
 	<time>
 		<first>1537892196</first>
-		<last>12</last>
-		<total>4978</total>
+		<last>2</last>
+		<total>5748</total>
 	</time>
 	<lang>
 		<lang>english</lang>
 	</lang>
 </config>
+

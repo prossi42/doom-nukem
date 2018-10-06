@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:05:54 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/04 02:02:44 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/05 19:41:14 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int		struct_init_env_lang(t_main *m)
 {
 	m->env.lang.set_screen_size_a = NULL;
 	m->env.lang.set_screen_size_b = NULL;
+	m->env.lang.set_language = NULL;
+	m->env.lang.select_lang = 0;
 	return(0);
 }
 
