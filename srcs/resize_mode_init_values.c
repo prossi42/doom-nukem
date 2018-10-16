@@ -18,7 +18,7 @@ void	resize_mode_init_values_sd(t_main *m, int option)
 	{
 		m->graph.lt.couleur = 0xFF0000;
 		m->graph.bs.color = 0xFF0000;
-		if (m->env.lang_value == 0)
+		if (m->env.language_mode == 0)
 			m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 325;
 		else
 			m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 520;
@@ -28,7 +28,7 @@ void	resize_mode_init_values_sd(t_main *m, int option)
 	}
 	else if (option == 3)
 	{
-		if (m->env.lang_value == 0)
+		if (m->env.language_mode == 0)
 			m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 210;
 		else
 			m->graph.lt.posx = m->graph.i.mlx->img_x / 2 - 400;
@@ -46,7 +46,7 @@ void	resize_mode_init_values(t_main *m, int option)
 	else if (option == 1)
 	{
 		m->graph.lt.coeff = 1;
-		if (m->env.lang_value == 0)
+		if (m->env.language_mode == 0)
 		{
 			m->graph.lt.posx = m->graph.i.mlx->img_x / 5;
 			m->graph.lt.posy = m->graph.i.mlx->img_y - (m->graph.i.mlx->img_y / 4);

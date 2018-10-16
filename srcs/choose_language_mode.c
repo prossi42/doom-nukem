@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 21:58:59 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/06 13:27:53 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/09 16:59:19 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,26 @@ void	end_choose_language_mode(t_main *m)
 
 	if (m->env.lang.select_lang == 0)
 	{
-		xml_parser("config/lang/lang/english", &m->env.xml_struct, 4, 0);
-		m->env.lang_value = 0;
+		xml_parser("config/lang/lang/english", &m->env.config_struct, 4, 0);
+		m->env.language_mode = 0;
 		set_struct_lang_en(m);
 	}
 	else
 	{
-		xml_parser("config/lang/lang/french", &m->env.xml_struct, 4, 0);
-		m->env.lang_value = 1;
+		xml_parser("config/lang/lang/french", &m->env.config_struct, 4, 0);
+		m->env.language_mode = 1;
 		set_struct_lang_fr(m);
 	}
 	mlx_destroy_image(m->mlx.mlx_ptr, m->graph.i.mlx->img);
 	mlx_clear_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 	mlx_destroy_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
-	mlx_create_windows(m);
+	mlx_launching_windows(m);
 }
 
 void	choose_language_hook(t_main *m, int keycode)
 {
 	int		tmp;
+	
 	tmp = m->env.lang.select_lang;
 	if (keycode == 126)
 	{
@@ -52,7 +53,7 @@ void	choose_language_hook(t_main *m, int keycode)
 		mlx_destroy_image(m->mlx.mlx_ptr, m->graph.i.mlx->img);
 		mlx_clear_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 		mlx_destroy_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
-		mlx_create_windows(m);
+		mlx_launching_windows(m);
 	}
 }
 
@@ -98,6 +99,6 @@ void	choose_language_mode(t_main *m, int keycode, int option)
 		draw_choose_language(m);
 	else if (option == 1)
 		choose_language_hook(m, keycode);
-	else if (option == 2)
+	else
 		end_choose_language_mode(m);
 }

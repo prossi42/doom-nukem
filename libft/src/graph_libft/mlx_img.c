@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 12:38:33 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/09/28 15:39:49 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/10/12 10:44:11 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int		mlx_img(t_graph *e, int option, int nmail, void *mlx_ptr)
 	}
 	else if (option == 1)
 	{
+		if (e->i.n_img != 0)
+			goto_mlx_list(&e->i, e->i.n_img - 1);
 		e->i.tmp = e->i.mlx;
 		init_new_img(&e->i.mlx->next, &e->i);
 		e->i.mlx = e->i.mlx->next;

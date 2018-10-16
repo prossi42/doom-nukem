@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 22:50:55 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/05 19:08:16 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/10 01:19:04 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	choose_language_mode_init_values_sd(t_main *m, int option)
 		}
 		m->graph.lt.coeff = 0.80;
 		m->graph.lt.space = 40;
-		m->graph.lt.posx = (m->graph.i.mlx->img_x / 2.4);
-		m->graph.lt.posy = (m->graph.i.mlx->img_y / 5) * 2.65;
+		m->graph.lt.posx = (m->graph.i.mlx->img_x / 2.25);
+		m->graph.lt.posy = (m->graph.i.mlx->img_y / 5) * 2.6;
 	}
 	else if (option == 5)
 	{
@@ -61,10 +61,10 @@ void	choose_language_mode_init_values_sd(t_main *m, int option)
 			m->graph.bs.color = 0x000000;
 			m->graph.lt.couleur = 0x000000;
 		}
-		m->graph.lt.coeff = 0.75;
+		m->graph.lt.coeff = 0.8;
 		m->graph.lt.space = 40;
-		m->graph.lt.posx = (m->graph.i.mlx->img_x / 2.43);
-		m->graph.lt.posy = (m->graph.i.mlx->img_y / 5) * 4.15;
+		m->graph.lt.posx = (m->graph.i.mlx->img_x / 2.30);
+		m->graph.lt.posy = (m->graph.i.mlx->img_y / 5) * 4.10;
 	}
 }
 
@@ -79,7 +79,7 @@ void	choose_language_mode_init_values(t_main *m, int option)
 	{
 		m->graph.lt.couleur = 0xFF0000;
 		m->graph.bs.color = 0xFF0000;
-		m->graph.lt.posx = m->graph.i.mlx->img_x / 4;
+		m->graph.lt.posx = m->graph.i.mlx->img_x / 3.05;
 		m->graph.lt.posy = 200;
 		m->graph.lt.coeff = 1;
 		m->graph.lt.space = 40;

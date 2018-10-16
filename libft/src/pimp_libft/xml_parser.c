@@ -49,7 +49,7 @@ int		init_root(t_xmlroot **root, t_xml *xml)
 	return(0);
 }
 
-t_xml	init_xml_struct(void)
+t_xml	init_config_struct(void)
 {
 	t_xml	xml;
 

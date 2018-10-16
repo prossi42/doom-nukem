@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 17:22:31 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/04 00:29:44 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/16 01:28:17 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../off_libft/libft.h"
 # include "../pimp_libft/my_libft.h"
-# include "../../../minilibx/minilibx_linux/includes/mlx.h"
+# include "../../../mlx/mlx.h"
 
 typedef struct		s_mlx
 {
@@ -151,5 +151,9 @@ int					mlx_img(t_graph *e, int option, int nmail, void *mlx_ptr);
 void				fill_img(t_mlx **mlx, t_images *i, void *mlx_ptr);
 void				draw_resize(t_graph *e, int color);
 void				draw_directional_arrows(t_graph *e, int posx, int posy);
+void				img_one_color(t_mlx **mlx, int color);
+void				draw_new_file(t_graph *e, int posx, int posy, int color);
+void				draw_del_file(t_graph *e, int posx, int posy, int color);
+void				draw_floppy_drive(t_graph *e, int posx, int posy, int color);
 
 #endif

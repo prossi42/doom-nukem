@@ -18,7 +18,7 @@ void	escape_exit(t_main *m)
 	// mlx_destroy_image(e->img.mlx_ptr, e->img.win_ptr);
 	// ntmleaks(e);
 	set_time(m, 1);
-	xml_writer(&m->env.xml_struct, m->fd, m->env.path.config_file);
+	xml_writer(&m->env.config_struct, m->fd, m->env.path.config_file);
 	mlx_clear_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 	mlx_destroy_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 	ft_memdel((void **)&m);

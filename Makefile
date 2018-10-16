@@ -3,118 +3,66 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+         #
+#    By: jgaillar <jgaillar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/06/13 14:28:04 by awk-lm            #+#    #+#              #
-#    Updated: 2018/10/04 22:53:43 by Awklm            ###   ########.fr        #
+#    Created: 2017/05/26 20:10:24 by jgaillar          #+#    #+#              #
+#    Updated: 2018/10/15 23:30:27 by Awklm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			:=			doom-nukem
+SRC_PATH = srcs/
 
-#==============================================================================#
-#------------------------------------------------------------------------------#
-#                               DIRECTORIES                                    #
-
-SRC_DIR			:=			./srcs
-INC_DIR			:=			./includes
-OBJ_DIR			:=			./obj
-LIBFT_DIR		:=			./libft
-MLX_DIR			:=			./minilibx
-
-#==============================================================================#
-#------------------------------------------------------------------------------#
-#                                  FILES                                       #
-
-SRC				:=			main.c get_env.c mlx_processes.c keyhooks.c exit.c \
+SRC_NAME = main.c get_env.c mlx_processes.c main_keyhooks.c exit.c \
 							struct_init.c set_env.c set_struct_lang_en.c \
 							set_struct_lang_fr.c resize_mode.c \
 							set_struct_lang_not_chosen.c choose_language_mode.c \
-							resize_mode_init_values.c choose_language_mode_init_values.c
+							resize_mode_init_values.c choose_language_mode_init_values.c \
+							awklm_productions_mode.c awklm_productions_background_init_values.c \
+							main_menu_mode.c main_menu_mode_init_values.c \
+							main_menu_background_init_values.c main_menu_write_init_values.c
 
-OBJ				:=			$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
-NB				:=			$(words $(SRC))
-INDEX			:=			0
+EDITOR_PATH = srcs/editor/
 
-#==============================================================================#
-#------------------------------------------------------------------------------#
-#                            COMPILER & FLAGS                                  #
+SRC_NAME_EDITOR = editor.c editor_keyhooks.c editor_menu.c editor_mouse_move_hook.c
 
-CC				:=			gcc
-CFLAGS			:=			-Wall -Wextra -Werror -g3
-OFLAGS			:=			-pipe
-CFLAGS			+=			$(OFLAGS)
-CLIB			:=			-L$(LIBFT_DIR) -lft
-MFLAGS			:=			-lm -lmlx -framework OpenGL -framework Appkit
-LFLAGS			:=			-lm -lmlx -lXext -lX11 -lssh
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
-#==============================================================================#
-#------------------------------------------------------------------------------#
-#                                LIBRARY                                       #
+OBJ_SRC_EDITOR = $(SRC_NAME_EDITOR:.c=.o)
 
-L_FT			:=			$(LIBFT_DIR)
-MLX				:=			$(MLX_DIR)
+CPPFLAGS = -Iincludes
 
-#==============================================================================#
-#------------------------------------------------------------------------------#
-#                                OS CHECKING                                   #
+NAME = doom-nukem
 
-UNAME_S := $(shell uname -s)
-ifeq ($(UNAME_S),Linux)
-MLX_DIR			:=			./minilibx/minilibx_linux
-CLIB			:=			-L$(LIBFT_DIR) -lft -g -L$(MLX_DIR) $(LFLAGS)
-endif
-ifeq ($(UNAME_S),Darwin)
-MLX_DIR			:=			./minilibx/minilibx_mac
-CLIB			:=			-L$(LIBFT_DIR) -lft -g -L$(MLX_DIR) $(MFLAGS)
-endif
+CC = clang
 
-#==============================================================================#
-#------------------------------------------------------------------------------#
-#                                 RULES                                        #
+CFLAGS = -Wall -Wextra -Werror
 
-all:					$(NAME)
+FDFFLAGS = -framework OpenGL -framework Appkit -lpthread -D_REENTRANT
 
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-$(NAME):				lib obj_inc $(OBJ)
-	@$(CC) $(OFLAGS) $(OBJ) $(CLIB) -o $(NAME)
-	@printf '\033[33m[ 100%% ] %s\n\033[0m' "Compilation of $(NAME) is done ---"
+SRC_EDITOR = $(addprefix $(EDITOR_PATH)/,$(SRC_NAME_EDITOR))
 
+OBJ = $(addprefix $(SRC_PATH)/,$(OBJ_NAME))
 
-$(OBJ_DIR)/%.o:			$(SRC_DIR)/%.c
-	@$(eval DONE=$(shell echo $$(($(INDEX)*20/$(NB)))))
-	@$(eval PERCENT=$(shell echo $$(($(INDEX)*100/$(NB)))))
-	@$(eval TO_DO=$(shell echo "$@"))
-	@$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ -c $<
-	@printf "[ %d%% ] %s :: %s        \r" $(PERCENT) $(NAME) $@
-	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
+OBJ_EDITOR = $(addprefix $(EDITOR_PATH)/,$(OBJ_SRC_EDITOR))
 
+all: $(NAME)
 
-obj_inc:
-	@mkdir -p $(OBJ_DIR)
-
-
-lib:
-	@make -C libft/ --no-print-directory
-	@make -C $(MLX_DIR) --no-print-directory
-
+$(NAME): $(OBJ) $(OBJ_EDITOR)
+	@cd libft ; make re ; make clean ; cd ..
+	@cd mlx ; make re ; cd ..
+	$(CC) $(CCFLAGS) $(FDFFLAGS) $(CPPFLAGS) libft/libft.a mlx/libmlx.a $^ -o $@
 
 clean:
-	@make -C $(L_FT) clean --no-print-directory
-	@make -C $(MLX_DIR) clean --no-print-directory
-	@rm -f $(OBJ)
-	@rm -rf $(OBJ_DIR)
-	@printf '\033[33m[ KILL ] %s\n\033[0m' "Clean of $(NAME) is done ---"
+	cd $(SRC_PATH) ; rm -rf $(OBJ_NAME) ; cd -
+	cd $(EDITOR_PATH) ; rm -rf $(OBJ_SRC_EDITOR) ; cd -
 
+fclean: clean
+	rm -rf libft/libft.a
+	rm -rf mlx/libmlx.a
+	rm -rf $(NAME)
 
-fclean: 				clean
-	@rm -rf $(NAME)
-	@make -C $(L_FT) fclean --no-print-directory
-	@make -C $(MLX_DIR) clean --no-print-directory
-	@printf '\033[33m[ KILL ] %s\n\033[0m' "Fclean of $(NAME) is done ---"
+re: fclean all
 
-
-re:						fclean all
-
-
-.PHONY: all clean fclean re build cbuild
+.PHONY: all, clean, fclean

@@ -40,7 +40,7 @@ int		check_availability(t_main *m)
 
 int		get_xml_data(t_main *m)
 {
-	xml_parser(m->env.path.config_file, &m->env.xml_struct, 0, m->fd);
+	xml_parser(m->env.path.config_file, &m->env.config_struct, 0, m->fd);
 	return(0);
 }
 

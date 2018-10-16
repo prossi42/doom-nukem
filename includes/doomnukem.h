@@ -1,7 +1,8 @@
 #ifndef DOOMNUKEM_H
 # define DOOMNUKEM_H
+
 # include "my_libs.h"
-# include "../minilibx/minilibx_linux/includes/mlx.h"
+# include "../mlx/mlx.h"
 // # include <X11/Xlib.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -18,12 +19,40 @@
 
 # define BUFF_SIZE 0xfffff
 
+typedef struct		s_editor_menu
+{
+	int				xmin;
+	int				xmax;
+	int				ymin;
+	int				ymax;
+	int				onclick;
+	int				new_file_color;
+	int				del_file_color;
+	int				floppy_drive_color;
+}					t_editor_menu;
+
+typedef	struct		s_editor
+{
+	int				editor;
+	int				menu;
+	int				tools_picker;
+	int				alt_map;
+	int				main_map;
+	int				img_picker;
+	t_editor_menu	ed_menu;
+}					t_editor;
+
 typedef struct		s_lang
 {
 	char			*set_screen_size_a;
 	char			*set_screen_size_b;
 	char			*set_language;
 	int				select_lang;
+	char			*new_game;
+	char			*load_game;
+	char			*editor;
+	char			*stats;
+	char			*settings;
 }					t_lang;
 
 typedef struct		s_paths
@@ -52,11 +81,14 @@ typedef struct		s_env
 	int				scr_height;
 	int				scr_width;
 	int				resize_mode;
-	t_xml			xml_struct;
+	t_xml			config_struct;
+	t_xml			map_struct;
 	t_paths			path;
 	t_lang			lang;
 	t_times			time;
-	int				lang_value;
+	int				language_mode;
+	int				awklm_prod_mode;
+	int				main_menu_mode;
 }					t_env;
 
 typedef struct		s_main
@@ -65,6 +97,7 @@ typedef struct		s_main
 	t_mlxstuff		mlx;
 	int				fd;
 	t_graph			graph;
+	t_editor		editor;
 }					t_main;
 
 			// Environment
@@ -80,15 +113,27 @@ int					struct_init(t_main *m);
 
 			// Minilibx
 void				mlx_processes(t_main *m);
-int					keyhooks(int keycode, t_main *m);
-void				mlx_create_windows(t_main *m);
+int					main_keyhooks(int keycode, t_main *m);
+void				mlx_launching_windows(t_main *m);
+void				mlx_launching_editor(t_main *m);
 
 			// Modes
 void				resize_mode(t_main *m, int keycode, int option);
 void				resize_mode_init_values(t_main *m, int option);
 void				choose_language_mode(t_main *m, int keycode, int option);
 void				choose_language_mode_init_values(t_main *m, int option);
-void				awklm_production_mode(t_main *m, int keycode, int option);
+void				awklm_productions_mode(t_main *m, int option);
+void				awklm_productions_background_init_values(t_main *m, int option);
+void				main_menu_mode(t_main *m, int keycode, int option);
+void				main_menu_mode_init_values(t_main *m, int option);
+void				main_menu_background_init_values(t_main *m, int option);
+void				main_menu_write_init_values(t_main *m, int option);
+
+			// Editor
+void				editor(t_main *m);
+void				editor_menu(t_main *m);
+int					editor_mouse_move_hook(int x, int y, t_main *m);
+int					editor_keyhooks(int keycode, t_main *m);
 
 			// Exit
 void				escape_exit(t_main *m);
