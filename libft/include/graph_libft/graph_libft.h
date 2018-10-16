@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 17:22:31 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/16 01:28:17 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/16 16:06:58 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@ void				draw_directional_arrows(t_graph *e, int posx, int posy);
 void				img_one_color(t_mlx **mlx, int color);
 void				draw_new_file(t_graph *e, int posx, int posy, int color);
 void				draw_del_file(t_graph *e, int posx, int posy, int color);
-void				draw_floppy_drive(t_graph *e, int posx, int posy, int color);
+void				draw_save_logo(t_graph *e, int posx, int posy, int color);
+void				draw_load_logo(t_graph *e, int posx, int posy, int color);
 
 #endif

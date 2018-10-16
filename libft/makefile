@@ -50,7 +50,7 @@ init_segment_e.c jj.c kk.c ll.c minus.c mm.c nine.c nn.c one.c oo.c pp.c \
 qq.c rr.c settings.c seven.c six.c slash.c ss.c three.c tt.c two.c uu.c vv.c \
 ww.c xx.c yy.c zero.c zz.c mlx_img.c pixel_put_to_img.c draw_resize.c \
 ft_ellipse_select_part.c draw_directional_arrows.c img_one_color.c \
-draw_new_file.c draw_del_file.c draw_floppy_drive.c
+draw_new_file.c draw_del_file.c draw_save_logo.c draw_load_logo.c
 
 OBJ_PATH_OFF = obj/
 

@@ -28,7 +28,8 @@ typedef struct		s_editor_menu
 	int				onclick;
 	int				new_file_color;
 	int				del_file_color;
-	int				floppy_drive_color;
+	int				save_file_color;
+	int				load_file_color;
 }					t_editor_menu;
 
 typedef	struct		s_editor

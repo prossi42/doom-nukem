@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 23:26:25 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/16 01:12:14 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/16 14:58:43 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		editor_menu_mouse_move_hook(t_main *m, int x, int y)
 		m->editor.ed_menu.onclick = 2;
 	else if (x > m->editor.ed_menu.xmin + 130 && x < m->editor.ed_menu.xmin + 170 && y > m->editor.ed_menu.ymin + 10)
 		m->editor.ed_menu.onclick = 3;
+	else if (x > m->editor.ed_menu.xmin + 190 && x < m->editor.ed_menu.xmin + 230 && y > m->editor.ed_menu.ymin + 10)
+		m->editor.ed_menu.onclick = 4;
 	else
 		m->editor.ed_menu.onclick = 0;
 	if (status != m->editor.ed_menu.onclick)
