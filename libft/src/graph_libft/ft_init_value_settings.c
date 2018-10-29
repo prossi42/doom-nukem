@@ -6,13 +6,13 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 13:55:15 by prossi            #+#    #+#             */
-/*   Updated: 2018/04/13 14:00:20 by prossi           ###   ########.fr       */
+/*   Updated: 2018/10/17 18:41:46 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/graph_libft/graph_libft.h"
 
-void	ft_init_value_settings_fih(t_graph *e, int option)
+void	ft_init_value_settings_fih(t_graph *e, int option, int background_color)
 {
 	if (option == 12)
 	{
@@ -22,14 +22,14 @@ void	ft_init_value_settings_fih(t_graph *e, int option)
 	}
 	if (option == 13)
 	{
-		e->lt.couleur = 0x000000;
+		e->lt.couleur = background_color;
 		e->bs.x_arc = e->lt.posx + (10 * e->lt.coeff);
 		e->bs.y_arc = e->lt.posy - (10 * e->lt.coeff);
 		e->bs.ray_arc = 5 * e->lt.coeff;
 	}
 }
 
-void	ft_init_value_settings_fh(t_graph *e, int option)
+void	ft_init_value_settings_fh(t_graph *e, int option, int background_color)
 {
 	if (option == 9)
 	{
@@ -52,10 +52,10 @@ void	ft_init_value_settings_fh(t_graph *e, int option)
 		e->bs.xf = e->bs.xi + (20 * e->lt.coeff) - 1 - (5 * e->lt.coeff);
 		e->bs.yf = e->bs.yi + (20 * e->lt.coeff) - 1 - (5 * e->lt.coeff);
 	}
-	ft_init_value_settings_fih(e, option);
+	ft_init_value_settings_fih(e, option, background_color);
 }
 
-void	ft_init_value_settings_td(t_graph *e, int option)
+void	ft_init_value_settings_td(t_graph *e, int option, int background_color)
 {
 	if (option == 6)
 	{
@@ -78,10 +78,10 @@ void	ft_init_value_settings_td(t_graph *e, int option)
 		e->bs.xf = e->bs.xi + (20 * e->lt.coeff) - 1 - (5 * e->lt.coeff);
 		e->bs.yf = e->bs.yi - (20 * e->lt.coeff) + 1 + (5 * e->lt.coeff);
 	}
-	ft_init_value_settings_fh(e, option);
+	ft_init_value_settings_fh(e, option, background_color);
 }
 
-void	ft_init_value_settings_sd(t_graph *e, int option)
+void	ft_init_value_settings_sd(t_graph *e, int option, int background_color)
 {
 	if (option == 3)
 	{
@@ -104,10 +104,10 @@ void	ft_init_value_settings_sd(t_graph *e, int option)
 		e->bs.xf = e->bs.xi;
 		e->bs.yf = e->bs.yi - (20 * e->lt.coeff);
 	}
-	ft_init_value_settings_td(e, option);
+	ft_init_value_settings_td(e, option, background_color);
 }
 
-void	ft_init_value_settings(t_graph *e, int option)
+void	ft_init_value_settings(t_graph *e, int option, int background_color)
 {
 	if (option == 0)
 	{
@@ -130,5 +130,5 @@ void	ft_init_value_settings(t_graph *e, int option)
 		e->bs.xf = e->bs.xi + (20 * e->lt.coeff);
 		e->bs.yf = e->bs.yi;
 	}
-	ft_init_value_settings_sd(e, option);
+	ft_init_value_settings_sd(e, option, background_color);
 }

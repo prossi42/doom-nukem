@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 17:22:31 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/16 16:06:58 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/19 01:09:38 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void				ft_segment(t_graph *e);
 void				ft_arc(t_graph *e, int option);
 void				awklm_string_put(char *str, t_graph *e);
 void				ft_ellipse(t_graph *e, int piece, int option);
-void				settings(t_graph *e);
+void				settings(t_graph *e, int color, int background_color);
 void				full_box(t_graph *e);
 void				empty_box(t_graph *e);
 void				ft_full_ellipse(t_graph *e, int piece, int option);
@@ -144,7 +144,7 @@ void				select_part_height_sd(t_graph *e, int x, int y, int option);
 void				select_part_height(t_graph *e, int x, int y, int option);
 void				select_part_width_sd(t_graph *e, int x, int y, int option);
 void				select_part_width(t_graph *e, int x, int y, int option);
-void				ft_init_value_settings(t_graph *e, int option);
+void				ft_init_value_settings(t_graph *e, int option, int background_color);
 void				ft_init_value_two(t_graph *e, int option);
 void				pixel_put_to_img(t_mlx **mlx, int x, int y, int color);
 int					mlx_img(t_graph *e, int option, int nmail, void *mlx_ptr);
@@ -156,5 +156,6 @@ void				draw_new_file(t_graph *e, int posx, int posy, int color);
 void				draw_del_file(t_graph *e, int posx, int posy, int color);
 void				draw_save_logo(t_graph *e, int posx, int posy, int color);
 void				draw_load_logo(t_graph *e, int posx, int posy, int color);
-
+void				draw_exit_logo(t_graph *e, int posx, int posy, int color);
+void				color_img_edges(t_graph *e, int pixel, int color);
 #endif

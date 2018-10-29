@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:05:54 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/16 00:06:26 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/29 08:23:22 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ int		struct_init_env_lang(t_main *m)
 	m->env.lang.set_screen_size_b = NULL;
 	m->env.lang.set_language = NULL;
 	m->env.lang.select_lang = 0;
+	m->env.lang.new_game = NULL;
+	m->env.lang.load_game = NULL;
+	m->env.lang.editor = NULL;
+	m->env.lang.stats = NULL;
+	m->env.lang.settings = NULL;
+	m->env.lang.editor_new_map_settings = NULL;
+	m->env.lang.editor_new_map_name = NULL;
 	return(0);
 }
 
@@ -73,6 +80,7 @@ int		struct_init_editor(t_main *m)
 	m->editor.tools_picker = 1;
 	m->editor.menu = 1;
 	m->editor.img_picker = 1;
+	m->editor.new_map_settings = 0;
 	struct_init_editor_menu(m);
 	return(0);
 }

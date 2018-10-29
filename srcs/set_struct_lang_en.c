@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 12:15:56 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/10 08:25:59 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/29 08:25:11 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int		set_struct_lang_en(t_main *m)
 	m->env.lang.editor = ft_strdup("Editor");
 	m->env.lang.stats = ft_strdup("stats");
 	m->env.lang.settings = ft_strdup("settings");
+	m->env.lang.editor_new_map_settings = ft_strdup("New map settings");
+	m->env.lang.editor_new_map_name = ft_strdup("Name");
 	return(0);
 }

@@ -30,17 +30,23 @@ typedef struct		s_editor_menu
 	int				del_file_color;
 	int				save_file_color;
 	int				load_file_color;
+	int				exit_color;
+	int				settings_color;
+	int				back_settings_color;
 }					t_editor_menu;
 
 typedef	struct		s_editor
 {
 	int				editor;
+	//
 	int				menu;
+	t_editor_menu	ed_menu;
+	//
 	int				tools_picker;
 	int				alt_map;
 	int				main_map;
 	int				img_picker;
-	t_editor_menu	ed_menu;
+	int				new_map_settings;
 }					t_editor;
 
 typedef struct		s_lang
@@ -54,6 +60,8 @@ typedef struct		s_lang
 	char			*editor;
 	char			*stats;
 	char			*settings;
+	char			*editor_new_map_settings;
+	char			*editor_new_map_name;
 }					t_lang;
 
 typedef struct		s_paths
@@ -135,6 +143,8 @@ void				editor(t_main *m);
 void				editor_menu(t_main *m);
 int					editor_mouse_move_hook(int x, int y, t_main *m);
 int					editor_keyhooks(int keycode, t_main *m);
+void				editor_new_map_settings(t_main *m);
+int					editor_mouse_click_hook(int button, int x, int y, t_main *m);
 
 			// Exit
 void				escape_exit(t_main *m);

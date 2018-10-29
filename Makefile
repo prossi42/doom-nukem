@@ -6,7 +6,7 @@
 #    By: jgaillar <jgaillar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/26 20:10:24 by jgaillar          #+#    #+#              #
-#    Updated: 2018/10/15 23:30:27 by Awklm            ###   ########.fr        #
+#    Updated: 2018/10/19 02:28:37 by Awklm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC_NAME = main.c get_env.c mlx_processes.c main_keyhooks.c exit.c \
 
 EDITOR_PATH = srcs/editor/
 
-SRC_NAME_EDITOR = editor.c editor_keyhooks.c editor_menu.c editor_mouse_move_hook.c
+SRC_NAME_EDITOR = editor.c editor_keyhooks.c editor_menu.c editor_mouse_move_hook.c \
+					editor_mouse_click_hook.c editor_new_map_settings.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -50,8 +51,8 @@ OBJ_EDITOR = $(addprefix $(EDITOR_PATH)/,$(OBJ_SRC_EDITOR))
 all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_EDITOR)
-	@cd libft ; make re ; make clean ; cd ..
-	@cd mlx ; make re ; cd ..
+	@cd libft ; make ; cd ..
+	@cd mlx ; make ; cd ..
 	$(CC) $(CCFLAGS) $(FDFFLAGS) $(CPPFLAGS) libft/libft.a mlx/libmlx.a $^ -o $@
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 08:57:53 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/15 23:31:27 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/19 02:22:29 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	mlx_launching_editor(t_main *m)
 	editor(m);
 	mlx_hook(m->mlx.win_ptr, 2, (1L << 0), editor_keyhooks, m);
 	mlx_hook(m->mlx.win_ptr, 6, (1L << 6), editor_mouse_move_hook, m);
+	mlx_hook(m->mlx.win_ptr, 4, (1L << 2), editor_mouse_click_hook, m);
 }
 
 void	mlx_launching_windows(t_main *m)
