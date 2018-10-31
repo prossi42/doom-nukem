@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/11 13:54:56 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/11 13:58:50 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/30 18:30:05 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int		main_keyhooks(int keycode, t_main *m)
 	printf("Keycode : [%d]\n", keycode);
 	if (keycode == 53)
 		escape_exit(m);
-	else if (keycode == 123 || keycode == 124 || keycode == 125 || keycode == 126)
+	else if ((keycode == 123 || keycode == 124 || keycode == 125 || keycode == 126) && m->env.main_menu_mode != -2)
 	{
+		printf("valeur : [%d]\n", m->env.main_menu_mode);
 		if (m->env.language_mode == -1)
 			choose_language_mode(m, keycode, 1);
 		else

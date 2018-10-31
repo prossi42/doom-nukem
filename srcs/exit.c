@@ -18,7 +18,7 @@ void	escape_exit(t_main *m)
 	// mlx_destroy_image(e->img.mlx_ptr, e->img.win_ptr);
 	// ntmleaks(e);
 	set_time(m, 1);
-	xml_writer(&m->env.config_struct, m->fd, m->env.path.config_file);
+	xml_writer(&m->env.config_struct, m->fd, m->env.file.config.config_file);
 	mlx_clear_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 	mlx_destroy_window(m->mlx.mlx_ptr, m->mlx.win_ptr);
 	ft_memdel((void **)&m);
@@ -32,7 +32,7 @@ void	error_exit(int option, t_main *m)
 		ft_strdel(&m->env.path.path);
 		ft_strdel(&m->env.path.data_path);
 		ft_strdel(&m->env.path.config_path);
-		ft_strdel(&m->env.path.config_file);
+		ft_strdel(&m->env.file.config.config_file);
 	}
 	if (option > -1)
 		exit(-1);

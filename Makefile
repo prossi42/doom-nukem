@@ -6,7 +6,7 @@
 #    By: jgaillar <jgaillar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/26 20:10:24 by jgaillar          #+#    #+#              #
-#    Updated: 2018/10/19 02:28:37 by Awklm            ###   ########.fr        #
+#    Updated: 2018/10/31 15:09:34 by Awklm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRC_NAME = main.c get_env.c mlx_processes.c main_keyhooks.c exit.c \
 EDITOR_PATH = srcs/editor/
 
 SRC_NAME_EDITOR = editor.c editor_keyhooks.c editor_menu.c editor_mouse_move_hook.c \
-					editor_mouse_click_hook.c editor_new_map_settings.c
+					editor_mouse_click_hook.c editor_new_map_settings.c \
+					editor_exit_warnings.c editor_new_map_settings_checking_values.c \
+					editor_get_maps.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

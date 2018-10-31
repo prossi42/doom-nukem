@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 18:27:47 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/12 19:01:17 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/31 14:01:39 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	draw_awklm_productions(t_main *m)
 	draw_awklm_productions_background(m);
 	mlx_put_image_to_window(m->mlx.mlx_ptr, m->mlx.win_ptr, \
 		m->graph.i.mlx->img, 0, 0);
-	m->graph.i.mlx->img = mlx_xpm_file_to_image(m->mlx.mlx_ptr, "/Users/Awklm/Projects/doom-nukem/data/images/logo.xpm", &width, &height);
+	m->graph.i.mlx->img = mlx_xpm_file_to_image(m->mlx.mlx_ptr, m->env.file.images.awklm_logo, &width, &height);
 	mlx_put_image_to_window(m->mlx.mlx_ptr, m->mlx.win_ptr, \
 		m->graph.i.mlx->img, (m->env.scr_width / 2) - 57.5, (m->env.scr_height / 2) - 66);
 	m->env.awklm_prod_mode = 1;

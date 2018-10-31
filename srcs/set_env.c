@@ -43,7 +43,7 @@ int		set_time(t_main *m, int option)
 				return(-1);
 			xml_parser(tmp, &m->env.config_struct, 4, 0);
 			ft_strdel(&tmp);
-			xml_writer(&m->env.config_struct, m->fd, m->env.path.config_file);
+			xml_writer(&m->env.config_struct, m->fd, m->env.file.config.config_file);
 		}
 	}
 	else if (option == 1)

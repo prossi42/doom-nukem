@@ -6,7 +6,7 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 11:14:38 by prossi            #+#    #+#             */
-/*   Updated: 2018/09/25 12:29:46 by awk-lm           ###   ########.fr       */
+/*   Updated: 2018/10/29 22:01:42 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,7 @@ char		*ft_strcat_lin(char *begin, char *end);
 char		*xml_parser(char *buf, t_xml *xml, int option, int fd);
 void		reboot_xml_root(t_xml *xml);
 void		xml_writer(t_xml *xml, int fd, char *path);
+char		*ft_strcat_char(char *str, char c);
+char		*ft_strdel_last_char(char *str);
 
 #endif

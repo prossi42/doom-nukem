@@ -19,6 +19,58 @@
 
 # define BUFF_SIZE 0xfffff
 
+typedef struct		s_editor_map
+{
+	int				nb_loop;
+	int				nb_maps;
+	char			**maps_names;
+	DIR				*dir_stream;
+	struct dirent	*dir_list;
+}					t_editor_map;
+
+typedef struct		s_editor_exit_warnings
+{
+	int				xmin;
+	int				xmax;
+	int				ymin;
+	int				ymax;
+	int				onclick;
+	int				yes_color;
+	int				no_color;
+}					t_editor_exit_warnings;
+
+typedef struct		s_editor_n_map
+{
+	int				xmin;
+	int				xmax;
+	int				ymin;
+	int				ymax;
+	int				onclick;
+	int				ok_color;
+	int				exit_color;
+	int				write;
+	//
+	int				index_name;
+	char			*n_map_name;
+	int				name_color;
+	int				name_background_color;
+	//
+	int				index_width;
+	char			*n_map_width;
+	int				width_color;
+	int				width_background_color;
+	//
+	int				index_height;
+	char			*n_map_height;
+	int				height_color;
+	int				height_background_color;
+	//
+	int				index_floors;
+	char			*n_map_floors;
+	int				floors_color;
+	int				floors_background_color;
+}					t_editor_n_map;
+
 typedef struct		s_editor_menu
 {
 	int				xmin;
@@ -35,19 +87,27 @@ typedef struct		s_editor_menu
 	int				back_settings_color;
 }					t_editor_menu;
 
-typedef	struct		s_editor
+typedef	struct				s_editor
 {
-	int				editor;
+	int						editor;
 	//
-	int				menu;
-	t_editor_menu	ed_menu;
+	int						menu;
+	t_editor_menu			ed_menu;
 	//
-	int				tools_picker;
-	int				alt_map;
-	int				main_map;
-	int				img_picker;
-	int				new_map_settings;
-}					t_editor;
+	int						tools_picker;
+	int						alt_map;
+	int						main_map;
+	int						img_picker;
+	//
+	int						new_map_settings;
+	t_editor_n_map			ed_n_map;
+	//
+	int						map;
+	t_editor_map			ed_map;
+	//
+	int						exit_warnings;
+	t_editor_exit_warnings	ed_ex_warn;
+}							t_editor;
 
 typedef struct		s_lang
 {
@@ -62,14 +122,40 @@ typedef struct		s_lang
 	char			*settings;
 	char			*editor_new_map_settings;
 	char			*editor_new_map_name;
+	char			*editor_new_map_width;
+	char			*editor_new_map_height;
+	char			*editor_new_map_floors;
+	char			*editor_new_map_ok;
+	char			*editor_new_map_exit;
+	char			*editor_exit_warnings_yes;
+	char			*editor_exit_warnings_no;
+	char			*editor_exit_save_current_map;
+	char			*editor_exit_save_current_map2;
 }					t_lang;
+
+typedef struct		s_config_files
+{
+	char			*config_file;
+}					t_config_files;
+
+typedef struct		s_images_files
+{
+	char			*awklm_logo;
+}					t_images_files;
+
+typedef struct		s_files
+{
+	t_config_files	config;
+	t_images_files	images;
+}					t_files;
 
 typedef struct		s_paths
 {
 	char			*path;
 	char			*data_path;
 	char			*config_path;
-	char			*config_file;
+	char			*images_path;
+	char			*maps_path;
 }					t_paths;
 
 typedef struct		s_times
@@ -93,6 +179,7 @@ typedef struct		s_env
 	t_xml			config_struct;
 	t_xml			map_struct;
 	t_paths			path;
+	t_files			file;
 	t_lang			lang;
 	t_times			time;
 	int				language_mode;
@@ -145,6 +232,9 @@ int					editor_mouse_move_hook(int x, int y, t_main *m);
 int					editor_keyhooks(int keycode, t_main *m);
 void				editor_new_map_settings(t_main *m);
 int					editor_mouse_click_hook(int button, int x, int y, t_main *m);
+void				editor_exit_warnings(t_main *m);
+void				editor_new_map_settings_checking_values(t_main *m);
+void				editor_get_maps(t_main *m);
 
 			// Exit
 void				escape_exit(t_main *m);

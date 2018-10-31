@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/10 21:53:04 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/19 21:27:50 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/10/30 22:59:55 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ void	editor_init_imgs(t_main *m)
 		m->graph.i.img_y = 800;
 		mlx_img(&m->graph, 1, 0, m->mlx.mlx_ptr);
 		editor_new_map_settings(m);
+		m->graph.i.img_x = 500;
+		m->graph.i.img_y = 400;
+		mlx_img(&m->graph, 1, 0, m->mlx.mlx_ptr);
+		editor_exit_warnings(m);
 	}
 	m->editor.editor = 0;
 }
@@ -107,5 +111,6 @@ void	editor(t_main *m)
 		editor_menu(m);
 		editor_img_picker(m);
 		editor_new_map_settings(m);
+		editor_exit_warnings(m);
 	}
 }
