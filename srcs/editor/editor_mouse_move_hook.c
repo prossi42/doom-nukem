@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 23:26:25 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/31 00:12:06 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/06 01:59:38 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,36 @@ int		editor_exit_warnings_mouse_move_hook(t_main *m, int x, int y)
 	}
 	if (status != m->editor.ed_ex_warn.onclick)
 		return(1);
-	else
-		return(0);
+	return(0);
+}
+
+int		editor_alt_map_mouse_move_hook(t_main *m, int x, int y)
+{
+	int		status;
+
+	status = m->editor.ed_alt_map.onclick;
+	if (m->editor.alt_map == 1)
+	{
+		if (m->editor.ed_alt_map.mode == 0)
+		{
+			if (x > m->editor.ed_alt_map.xmin + 50 && x < m->editor.ed_alt_map.xmin + 370)
+			{
+				if (y > m->editor.ed_alt_map.ymin + 65 && y < m->editor.ed_alt_map.ymin + 135)
+					m->editor.ed_alt_map.onclick = 1;
+				else if (y > m->editor.ed_alt_map.ymin + 200 && y < m->editor.ed_alt_map.ymin + 270)
+					m->editor.ed_alt_map.onclick = 2;
+				else
+					m->editor.ed_alt_map.onclick = 0;
+			}
+			else
+			{
+				m->editor.ed_alt_map.onclick = 0;
+			}
+		}
+	}
+	if (status != m->editor.ed_alt_map.onclick)
+		return(1);
+	return(0);
 }
 
 int		editor_mouse_move_hook(int x, int y, t_main *m)
@@ -117,6 +145,8 @@ int		editor_mouse_move_hook(int x, int y, t_main *m)
 		status = editor_new_map_mouse_move_hook(m, x, y);
 	if (x > m->editor.ed_ex_warn.xmin && x < m->editor.ed_ex_warn.xmax && y > m->editor.ed_ex_warn.ymin && y < m->editor.ed_ex_warn.ymax)
 		status = editor_exit_warnings_mouse_move_hook(m, x, y);
+	if (x > m->editor.ed_alt_map.xmin && x < m->editor.ed_alt_map.xmax && y > m->editor.ed_alt_map.ymin && y < m->editor.ed_alt_map.ymax)
+		status = editor_alt_map_mouse_move_hook(m, x, y);
 	if (status == 1)
 		editor(m);
 	return(0);

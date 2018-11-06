@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 02:24:09 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/31 15:08:25 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/06 02:00:19 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,42 +39,143 @@ int		editor_new_map_settings_click_hook(t_main *m)
 			m->editor.ed_n_map.write = 0;
 			m->editor.ed_n_map.onclick = 0;
 			m->editor.new_map_settings = 0;
-			m->editor.map = 1;
-			m->editor.exit_warnings = 1;
+			if (m->editor.map == 1)
+				m->editor.exit_warnings = 1;
+			else
+			{
+				m->editor.exit_warnings = 1;
+				editor_new_map_settings_checking_values(m);
+				if (m->editor.map == 0)
+				{
+					editor_new_map_creating(m);
+					editor_new_map_settings_clear_all_fields(m);
+				}
+			}
 		}
 		else if (m->editor.ed_n_map.onclick == 6)
 		{
 			m->editor.new_map_settings = 0;
 			m->editor.ed_n_map.onclick = 0;
-			m->editor.ed_n_map.write = 0;
-			ft_bzero(m->editor.ed_n_map.n_map_name, ft_strlen(m->editor.ed_n_map.n_map_name));
-			m->editor.ed_n_map.index_name = 0;
-			ft_bzero(m->editor.ed_n_map.n_map_width, ft_strlen(m->editor.ed_n_map.n_map_width));
-			m->editor.ed_n_map.index_width = 0;
-			ft_bzero(m->editor.ed_n_map.n_map_height, ft_strlen(m->editor.ed_n_map.n_map_height));
-			m->editor.ed_n_map.index_height = 0;
-			ft_bzero(m->editor.ed_n_map.n_map_floors, ft_strlen(m->editor.ed_n_map.n_map_floors));
-			m->editor.ed_n_map.index_floors = 0;
+			editor_new_map_settings_clear_all_fields(m);
 		}
 		return(1);
 	}
 	return(0);
 }
 
-int		editor_exit_warnings_mouse_click_hook(t_main *m)
+int		editor_exit_warnings_click_hook(t_main *m)
 {
 	if (m->editor.exit_warnings == 1)
 	{
-		if (m->editor.ed_ex_warn.onclick == 1)
+		if (m->editor.map == 1) // Une map est deja ouverte, voulez vous sauvegarder ?
 		{
-			(void)m;
-			//Procedure de sauvegarde de la map deja ouverte avant d'ouvrir la nouvelle
+			if (m->editor.ed_ex_warn.onclick == 1) // oui
+			{
+				(void)m;
+				//Procedure de sauvegarde de la map deja ouverte avant d'ouvrir la nouvelle
+			}
+			else // non
+			{
+				m->editor.map = 0;
+				editor_new_map_settings_checking_values(m);
+			}
 		}
-		else
+		else if (m->editor.map == -1) // erreur ouverture dossier des maps, reesayer ?
 		{
-			m->editor.map = 0;
-			editor_new_map_settings_checking_values(m);
+			if (m->editor.ed_ex_warn.onclick == 1) //oui
+				editor_new_map_settings_checking_values(m);
+			else // non
+			{
+				m->editor.map = 0;
+				m->editor.exit_warnings = 0;
+				editor_new_map_settings_clear_all_fields(m);
+			}
 		}
+		else if (m->editor.map == 2) // nom de map existant deja, le changer ?
+		{
+			if (m->editor.ed_ex_warn.onclick == 1) // oui
+			{
+				m->editor.map = 0;
+				m->editor.new_map_settings = 1;
+				m->editor.exit_warnings = 0;
+			}
+			else // non
+			{
+				m->editor.map = 0;
+				m->editor.exit_warnings = 0;
+				editor_new_map_settings_clear_all_fields(m);
+			}
+		}
+		else if (m->editor.map == 3) // Trop petite width (inferieur a 3), le changer ?
+		{
+			if (m->editor.ed_ex_warn.onclick == 1) // oui
+			{
+				m->editor.map = 0;
+				m->editor.new_map_settings = 1;
+				m->editor.exit_warnings = 0;
+			}
+			else // non
+			{
+				m->editor.map = 0;
+				m->editor.exit_warnings = 0;
+				editor_new_map_settings_clear_all_fields(m);
+			}
+		}
+		else if (m->editor.map == 4) // Trop petite height (inferieur a 3), le changer ?
+		{
+			if (m->editor.ed_ex_warn.onclick == 1) // oui
+			{
+				m->editor.map = 0;
+				m->editor.new_map_settings = 1;
+				m->editor.exit_warnings = 0;
+			}
+			else // non
+			{
+				m->editor.map = 0;
+				m->editor.exit_warnings = 0;
+				editor_new_map_settings_clear_all_fields(m);
+			}
+		}
+		else if (m->editor.map == 5) // Trop petit floor (inferieur a 1), le changer ?
+		{
+			if (m->editor.ed_ex_warn.onclick == 1) // oui
+			{
+				m->editor.map = 0;
+				m->editor.new_map_settings = 1;
+				m->editor.exit_warnings = 0;
+			}
+			else // non
+			{
+				m->editor.map = 0;
+				m->editor.exit_warnings = 0;
+				editor_new_map_settings_clear_all_fields(m);
+			}
+		}
+		else if (m->editor.map == 6) // erreur creation de la map, recommencer ?
+		{
+			if (m->editor.ed_ex_warn.onclick == 1)
+			{
+				editor_new_map_creating(m);
+			}
+			else
+			{
+				m->editor.map = 0;
+				m->editor.exit_warnings = 0;
+			}
+		}
+		return(1);
+	}
+	return(0);
+}
+
+int		editor_alt_map_click_hook(t_main *m)
+{
+	if (m->editor.alt_map == 1)
+	{
+		if (m->editor.ed_alt_map.onclick == 1)
+			ft_putendl("floors");
+		else if (m->editor.ed_alt_map.onclick == 2)
+			ft_putendl("canvas");
 		return(1);
 	}
 	return(0);
@@ -93,7 +194,9 @@ int		editor_mouse_click_hook(int button, int x, int y, t_main *m)
 	else if (m->editor.ed_n_map.onclick != 0)
 		status = editor_new_map_settings_click_hook(m);
 	else if (m->editor.ed_ex_warn.onclick != 0)
-		status = editor_exit_warnings_mouse_click_hook(m);
+		status = editor_exit_warnings_click_hook(m);
+	else if (m->editor.ed_alt_map.onclick != 0)
+		status = editor_alt_map_click_hook(m);
 	if (status == 1)
 		editor(m);
 	return(0);

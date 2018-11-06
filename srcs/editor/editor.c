@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/10 21:53:04 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/30 22:59:55 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/03 14:44:35 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,6 @@ void	editor_tools_picker(t_main *m)
 	mlx_put_image_to_window(m->mlx.mlx_ptr, m->mlx.win_ptr, \
 		m->graph.i.mlx->img, 1500, 0);
 	m->editor.tools_picker = 0;
-}
-
-void	editor_alt_map(t_main *m)
-{
-	mlx_img(&m->graph, 3, 2, m->mlx.mlx_ptr);
-	if (m->editor.alt_map == 1)
-		img_one_color(&m->graph.i.mlx, 0x3D2F2F);
-	color_img_edges(&m->graph, 1, 0xFFFFFF);
-	mlx_put_image_to_window(m->mlx.mlx_ptr, m->mlx.win_ptr, \
-		m->graph.i.mlx->img, 1080, 700);
-	m->editor.alt_map = 0;
 }
 
 void	editor_main_map(t_main *m)
@@ -96,8 +85,6 @@ void	editor_init_imgs(t_main *m)
 	}
 	m->editor.editor = 0;
 }
-
-// void	editor_refresh_img(t_main *m, int option)
 
 void	editor(t_main *m)
 {

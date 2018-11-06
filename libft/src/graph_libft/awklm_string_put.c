@@ -6,7 +6,7 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 18:01:05 by prossi            #+#    #+#             */
-/*   Updated: 2018/10/31 01:16:34 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/02 01:12:17 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	draw_sign(t_graph *e)
 		hashtag(e);
 	else if (e->lt.charac == '!')
 		exclamation(e);
+	else if (e->lt.charac == '?')
+		question_mark(e);
 }
 
 void	draw_letter(t_graph *e)
@@ -60,7 +62,8 @@ void	draw_letter(t_graph *e)
 	if (e->lt.charac >= 48 && e->lt.charac <= 57)
 		draw_numbers(e);
 	if (e->lt.charac == '.' || e->lt.charac == '-' || e->lt.charac == ':' || \
-	e->lt.charac == '/' || e->lt.charac == '#' || e->lt.charac == '!')
+	e->lt.charac == '/' || e->lt.charac == '#' || e->lt.charac == '!' || \
+	e->lt.charac == '?')
 		draw_sign(e);
 }
 

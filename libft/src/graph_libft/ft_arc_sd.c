@@ -6,11 +6,16 @@
 /*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 13:02:36 by prossi            #+#    #+#             */
-/*   Updated: 2018/04/13 13:05:40 by prossi           ###   ########.fr       */
+/*   Updated: 2018/11/02 01:57:54 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/graph_libft/graph_libft.h"
+
+/*
+** Option 12 : quart cercle haut
+** Option 13 : quart cercle bas
+*/
 
 void	ft_arc_sd_option_sd(t_graph *e, int option, int x, int y)
 {

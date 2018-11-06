@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 02:12:45 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/30 08:18:22 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/02 14:26:15 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,6 @@ void	editor_new_map_settings_init_values_french(t_main *m, int option)
 		m->graph.lt.posy = 150;
 		awklm_string_put(m->env.lang.editor_new_map_name, &m->graph);
 	}
-	else if (option == 3)
-	{
-		m->graph.bs.xi = 210;
-		m->graph.bs.yi = 155;
-		m->graph.bs.xf = m->graph.bs.xi + 78;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
-	}
 	else if (option == 4)
 	{
 		m->graph.lt.posx = 125;
@@ -76,14 +68,6 @@ void	editor_new_map_settings_init_values_french(t_main *m, int option)
 		m->graph.lt.posy = 300;
 		awklm_string_put(m->env.lang.editor_new_map_width, &m->graph);
 	}
-	else if (option == 6)
-	{
-		m->graph.bs.xi = 170;
-		m->graph.bs.yi = 305;
-		m->graph.bs.xf = m->graph.bs.xi + 158;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
-	}
 	else if (option == 7)
 	{
 		m->graph.lt.posx = 125;
@@ -101,17 +85,9 @@ void	editor_new_map_settings_init_values_french(t_main *m, int option)
 		m->graph.lt.coeff = 0.50;
 		m->graph.lt.couleur = 0xFFFFFF;
 		m->graph.bs.color = 0xFFFFFF;
-		m->graph.lt.posx = 183;
+		m->graph.lt.posx = 174;
 		m->graph.lt.posy = 450;
 		awklm_string_put(m->env.lang.editor_new_map_height, &m->graph);
-	}
-	else if (option == 9)
-	{
-		m->graph.bs.xi = 170;
-		m->graph.bs.yi = 455;
-		m->graph.bs.xf = m->graph.bs.xi + 158;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
 	}
 	else if (option == 10)
 	{
@@ -133,14 +109,6 @@ void	editor_new_map_settings_init_values_french(t_main *m, int option)
 		m->graph.lt.posx = 193;
 		m->graph.lt.posy = 600;
 		awklm_string_put(m->env.lang.editor_new_map_floors, &m->graph);
-	}
-	else if (option == 12)
-	{
-		m->graph.bs.xi = 180;
-		m->graph.bs.yi = 605;
-		m->graph.bs.xf = m->graph.bs.xi + 138;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
 	}
 	else if (option == 13)
 	{
@@ -248,14 +216,6 @@ void	editor_new_map_settings_init_values_english(t_main *m, int option)
 		m->graph.lt.posy = 150;
 		awklm_string_put(m->env.lang.editor_new_map_name, &m->graph);
 	}
-	else if (option == 3)
-	{
-		m->graph.bs.xi = 200;
-		m->graph.bs.yi = 155;
-		m->graph.bs.xf = m->graph.bs.xi + 98;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
-	}
 	else if (option == 5)
 	{
 		m->graph.lt.coeff = 0.50;
@@ -264,14 +224,6 @@ void	editor_new_map_settings_init_values_english(t_main *m, int option)
 		m->graph.lt.posx = 203;
 		m->graph.lt.posy = 300;
 		awklm_string_put(m->env.lang.editor_new_map_width, &m->graph);
-	}
-	else if (option == 6)
-	{
-		m->graph.bs.xi = 190;
-		m->graph.bs.yi = 305;
-		m->graph.bs.xf = m->graph.bs.xi + 118;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
 	}
 	else if (option == 8)
 	{
@@ -282,14 +234,6 @@ void	editor_new_map_settings_init_values_english(t_main *m, int option)
 		m->graph.lt.posy = 450;
 		awklm_string_put(m->env.lang.editor_new_map_height, &m->graph);
 	}
-	else if (option == 9)
-	{
-		m->graph.bs.xi = 180;
-		m->graph.bs.yi = 455;
-		m->graph.bs.xf = m->graph.bs.xi + 138;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
-	}
 	else if (option == 11)
 	{
 		m->graph.lt.coeff = 0.50;
@@ -298,14 +242,6 @@ void	editor_new_map_settings_init_values_english(t_main *m, int option)
 		m->graph.lt.posx = 193;
 		m->graph.lt.posy = 600;
 		awklm_string_put(m->env.lang.editor_new_map_floors, &m->graph);
-	}
-	else if (option == 12)
-	{
-		m->graph.bs.xi = 180;
-		m->graph.bs.yi = 605;
-		m->graph.bs.xf = m->graph.bs.xi + 138;
-		m->graph.bs.yf = m->graph.bs.yi;
-		ft_segment(&m->graph);
 	}
 	else if (option == 14)
 	{
@@ -374,16 +310,12 @@ void	draw_editor_new_map_settings(t_main *m)
 		editor_new_map_settings_init_values_english(m, 0);
 		editor_new_map_settings_init_values_english(m, 1);
 		editor_new_map_settings_init_values_english(m, 2);
-		editor_new_map_settings_init_values_english(m, 3);
 		editor_new_map_settings_init_values_french(m, 4);
 		editor_new_map_settings_init_values_english(m, 5);
-		editor_new_map_settings_init_values_english(m, 6);
 		editor_new_map_settings_init_values_french(m, 7);
 		editor_new_map_settings_init_values_english(m, 8);
-		editor_new_map_settings_init_values_english(m, 9);
 		editor_new_map_settings_init_values_french(m, 10);
 		editor_new_map_settings_init_values_english(m, 11);
-		editor_new_map_settings_init_values_english(m, 12);
 		editor_new_map_settings_init_values_french(m, 13);
 		editor_new_map_settings_init_values_english(m, 14);
 		editor_new_map_settings_init_values_english(m, 15);
@@ -395,16 +327,12 @@ void	draw_editor_new_map_settings(t_main *m)
 		editor_new_map_settings_init_values_french(m, 0);
 		editor_new_map_settings_init_values_french(m, 1);
 		editor_new_map_settings_init_values_french(m, 2);
-		editor_new_map_settings_init_values_french(m, 3);
 		editor_new_map_settings_init_values_french(m, 4);
 		editor_new_map_settings_init_values_french(m, 5);
-		editor_new_map_settings_init_values_french(m, 6);
 		editor_new_map_settings_init_values_french(m, 7);
 		editor_new_map_settings_init_values_french(m, 8);
-		editor_new_map_settings_init_values_french(m, 9);
 		editor_new_map_settings_init_values_french(m, 10);
 		editor_new_map_settings_init_values_french(m, 11);
-		editor_new_map_settings_init_values_french(m, 12);
 		editor_new_map_settings_init_values_french(m, 13);
 		editor_new_map_settings_init_values_french(m, 14);
 		editor_new_map_settings_init_values_french(m, 15);

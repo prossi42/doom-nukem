@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 17:22:31 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/10/19 01:09:38 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/02 01:00:17 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ void				colons(t_graph *e);
 void				slash(t_graph *e);
 void				hashtag(t_graph *e);
 void				exclamation(t_graph *e);
+void				question_mark(t_graph *e);
 void				ft_segment(t_graph *e);
 void				ft_arc(t_graph *e, int option);
 void				awklm_string_put(char *str, t_graph *e);

@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/11 13:55:35 by Awklm             #+#    #+#             */
-/*   Updated: 2018/10/30 18:21:58 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/06 00:20:30 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void	editor_new_map_keykooks(int keycode, t_main *m)
 		}
 		else if (m->editor.ed_n_map.write == 2)
 		{
-			if (m->editor.ed_n_map.index_width < 4)
+			if (m->editor.ed_n_map.index_width < 3)
 			{
 				if ((keycode >= 82 && keycode <= 89) || (keycode >= 91 && keycode <= 92))
 				{
@@ -160,7 +160,7 @@ void	editor_new_map_keykooks(int keycode, t_main *m)
 		}
 		else if (m->editor.ed_n_map.write == 3)
 		{
-			if (m->editor.ed_n_map.index_height < 4)
+			if (m->editor.ed_n_map.index_height < 3)
 			{
 				if ((keycode >= 82 && keycode <= 89) || (keycode >= 91 && keycode <= 92))
 				{

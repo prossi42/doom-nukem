@@ -19,6 +19,18 @@
 
 # define BUFF_SIZE 0xfffff
 
+typedef struct		s_editor_alt_map
+{
+	int				mode;
+	int				xmin;
+	int				xmax;
+	int				ymin;
+	int				ymax;
+	int				onclick;
+	int				floors_color;
+	int				canvas_color;
+}					t_editor_alt_map;
+
 typedef struct		s_editor_map
 {
 	int				nb_loop;
@@ -26,6 +38,11 @@ typedef struct		s_editor_map
 	char			**maps_names;
 	DIR				*dir_stream;
 	struct dirent	*dir_list;
+	char			*current_map_name;
+	int				current_map_width;
+	int				current_map_height;
+	int				current_map_floor;
+	char			****map;
 }					t_editor_map;
 
 typedef struct		s_editor_exit_warnings
@@ -95,7 +112,9 @@ typedef	struct				s_editor
 	t_editor_menu			ed_menu;
 	//
 	int						tools_picker;
+	//
 	int						alt_map;
+	t_editor_alt_map		ed_alt_map;
 	int						main_map;
 	int						img_picker;
 	//
@@ -131,6 +150,21 @@ typedef struct		s_lang
 	char			*editor_exit_warnings_no;
 	char			*editor_exit_save_current_map;
 	char			*editor_exit_save_current_map2;
+	char			*editor_exit_error_map_dir;
+	char			*editor_exit_error_map_dir2;
+	char			*editor_exit_retry;
+	char			*editor_exit_already_exist;
+	char			*editor_exit_already_exist2;
+	char			*editor_exit_change_it;
+	char			*editor_exit_change_it_fem;
+	char			*editor_exit_bad_width;
+	char			*editor_exit_bad_width2;
+	char			*editor_exit_bad_height;
+	char			*editor_exit_bad_height2;
+	char			*editor_exit_bad_floor;
+	char			*editor_exit_bad_floor2;
+	char			*editor_exit_error_map_creat;
+	char			*editor_exit_error_map_creat2;
 }					t_lang;
 
 typedef struct		s_config_files
@@ -235,6 +269,9 @@ int					editor_mouse_click_hook(int button, int x, int y, t_main *m);
 void				editor_exit_warnings(t_main *m);
 void				editor_new_map_settings_checking_values(t_main *m);
 void				editor_get_maps(t_main *m);
+void				editor_new_map_settings_clear_all_fields(t_main *m);
+void				editor_alt_map(t_main *m);
+void				editor_new_map_creating(t_main *m);
 
 			// Exit
 void				escape_exit(t_main *m);
