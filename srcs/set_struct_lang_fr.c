@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 12:11:56 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/11/06 00:42:00 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/07 21:17:30 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ int		set_struct_lang_fr(t_main *m)
 	m->env.lang.editor_exit_change_it = ft_strdup("le changer ?");
 	m->env.lang.editor_exit_change_it_fem = ft_strdup("la changer ?");
 	m->env.lang.editor_exit_bad_width = ft_strdup("La largeur doit etre");
-	m->env.lang.editor_exit_bad_width2 = ft_strdup("d au moins 3");
+	m->env.lang.editor_exit_bad_width2 = ft_strdup("un multiple de 10");
 	m->env.lang.editor_exit_bad_height = ft_strdup("La longueur doit etre");
-	m->env.lang.editor_exit_bad_height2 = ft_strdup("d au moins 3");
+	m->env.lang.editor_exit_bad_height2 = ft_strdup("un multiple de 10");
 	m->env.lang.editor_exit_bad_floor = ft_strdup("Le nombre d'etages doit");
 	m->env.lang.editor_exit_bad_floor2 = ft_strdup("etre d au moins 1");
 	m->env.lang.editor_exit_error_map_creat = ft_strdup("Erreur lors de la creation");
 	m->env.lang.editor_exit_error_map_creat2 = ft_strdup("de la nouvelle map");
+	m->env.lang.editor_alt_map_floors = ft_strdup("Etages");
+	m->env.lang.editor_alt_map_canvas = ft_strdup("Canevas");
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 23:01:20 by Awklm             #+#    #+#             */
-/*   Updated: 2018/11/06 01:04:06 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/07 21:21:10 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void	editor_exit_warnings_init_values_french(t_main *m, int option)
 		awklm_string_put(m->env.lang.editor_exit_bad_width, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
 		m->graph.bs.color = 0xFFFFFF;
-		m->graph.lt.posx = 157;
+		m->graph.lt.posx = 84;
 		m->graph.lt.posy = 200;
 		awklm_string_put(m->env.lang.editor_exit_bad_width2, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
@@ -151,7 +151,7 @@ void	editor_exit_warnings_init_values_french(t_main *m, int option)
 		awklm_string_put(m->env.lang.editor_exit_bad_height, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
 		m->graph.bs.color = 0xFFFFFF;
-		m->graph.lt.posx = 157;
+		m->graph.lt.posx = 84;
 		m->graph.lt.posy = 200;
 		awklm_string_put(m->env.lang.editor_exit_bad_height2, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
@@ -321,7 +321,7 @@ void	editor_exit_warnings_init_values_english(t_main *m, int option)
 		awklm_string_put(m->env.lang.editor_exit_bad_width, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
 		m->graph.bs.color = 0xFFFFFF;
-		m->graph.lt.posx = 154;
+		m->graph.lt.posx = 94;
 		m->graph.lt.posy = 200;
 		awklm_string_put(m->env.lang.editor_exit_bad_width2, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
@@ -340,7 +340,7 @@ void	editor_exit_warnings_init_values_english(t_main *m, int option)
 		awklm_string_put(m->env.lang.editor_exit_bad_height, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;
 		m->graph.bs.color = 0xFFFFFF;
-		m->graph.lt.posx = 154;
+		m->graph.lt.posx = 94;
 		m->graph.lt.posy = 200;
 		awklm_string_put(m->env.lang.editor_exit_bad_height2, &m->graph);
 		m->graph.lt.couleur = 0xFFFFFF;

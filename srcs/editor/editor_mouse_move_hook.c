@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 23:26:25 by Awklm             #+#    #+#             */
-/*   Updated: 2018/11/06 01:59:38 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/09 10:14:09 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,65 @@ int		editor_alt_map_mouse_move_hook(t_main *m, int x, int y)
 					m->editor.ed_alt_map.onclick = 0;
 			}
 			else
-			{
 				m->editor.ed_alt_map.onclick = 0;
+		}
+		else if (m->editor.ed_alt_map.mode == 1)
+		{
+			if (y > m->editor.ed_alt_map.ymin + 10 && y < m->editor.ed_alt_map.ymin + 50)
+			{
+				if (x > m->editor.ed_alt_map.xmin + 10 && x < m->editor.ed_alt_map.xmin + 50)
+					m->editor.ed_alt_map.onclick = 3;
+				else if (x > m->editor.ed_alt_map.xmax - 50 && x < m->editor.ed_alt_map.xmax - 10)
+					m->editor.ed_alt_map.onclick = 4;
+				else
+					m->editor.ed_alt_map.onclick = 0;
 			}
+			else if (y > m->editor.ed_alt_map.ymin + 220 && y < m->editor.ed_alt_map.ymin + 265)
+			{
+				if (x > m->editor.ed_alt_map.xmin + 372 && x < m->editor.ed_alt_map.xmin + 404)
+					m->editor.ed_alt_map.onclick = 5;
+				else
+					m->editor.ed_alt_map.onclick = 0;
+			}
+			else if (y > m->editor.ed_alt_map.ymin + 155 && y < m->editor.ed_alt_map.ymin + 200)
+			{
+				if (x > m->editor.ed_alt_map.xmin + 372 && x < m->editor.ed_alt_map.xmin + 404)
+					m->editor.ed_alt_map.onclick = 6;
+				else
+					m->editor.ed_alt_map.onclick = 0;
+			}
+			else
+				m->editor.ed_alt_map.onclick = 0;
+		}
+		else if (m->editor.ed_alt_map.mode == 2)
+		{
+			if (y > m->editor.ed_alt_map.ymin + 10 && y < m->editor.ed_alt_map.ymin + 50)
+			{
+				if (x > m->editor.ed_alt_map.xmin + 10 && x < m->editor.ed_alt_map.xmin + 50)
+					m->editor.ed_alt_map.onclick = 7;
+				else if (x > m->editor.ed_alt_map.xmax - 50 && x < m->editor.ed_alt_map.xmax - 10)
+					m->editor.ed_alt_map.onclick = 8;
+				else
+					m->editor.ed_alt_map.onclick = 0;
+			}
+			else if (y > m->editor.ed_alt_map.ymin + 285 && y < m->editor.ed_alt_map.ymin + 325)
+			{
+				if (x > m->editor.ed_alt_map.xmin + 10 && x < m->editor.ed_alt_map.xmin + 50)
+					m->editor.ed_alt_map.onclick = 9;
+				else if (x > m->editor.ed_alt_map.xmax - 50 && x < m->editor.ed_alt_map.xmax - 10)
+					m->editor.ed_alt_map.onclick = 10;
+				else
+					m->editor.ed_alt_map.onclick = 0;
+			}
+			else if (y > m->editor.ed_alt_map.ymin + 50 && y < m->editor.ed_alt_map.ymin + 280)
+			{
+				if (x > m->editor.ed_alt_map.xmin + 97 && x < m->editor.ed_alt_map.xmin + 327)
+					m->editor.ed_alt_map.onclick = 11;
+				else
+					m->editor.ed_alt_map.onclick = 0;
+			}
+			else
+				m->editor.ed_alt_map.onclick = 0;
 		}
 	}
 	if (status != m->editor.ed_alt_map.onclick)

@@ -29,6 +29,16 @@ typedef struct		s_editor_alt_map
 	int				onclick;
 	int				floors_color;
 	int				canvas_color;
+	int				valid_button_color;
+	int				cross_button_color;
+	int				current_floor;
+	int				current_floor_tmp;
+	int				focus_one;
+	int				focus_two;
+	int				box_nb_width_one;
+	int				box_nb_height_one;
+	int				box_nb_width_two;
+	int				box_nb_height_two;
 }					t_editor_alt_map;
 
 typedef struct		s_editor_map
@@ -165,6 +175,8 @@ typedef struct		s_lang
 	char			*editor_exit_bad_floor2;
 	char			*editor_exit_error_map_creat;
 	char			*editor_exit_error_map_creat2;
+	char			*editor_alt_map_floors;
+	char			*editor_alt_map_canvas;
 }					t_lang;
 
 typedef struct		s_config_files
@@ -272,6 +284,7 @@ void				editor_get_maps(t_main *m);
 void				editor_new_map_settings_clear_all_fields(t_main *m);
 void				editor_alt_map(t_main *m);
 void				editor_new_map_creating(t_main *m);
+void				editor_main_map(t_main *m);
 
 			// Exit
 void				escape_exit(t_main *m);

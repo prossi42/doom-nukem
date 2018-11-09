@@ -6,7 +6,7 @@
 #    By: jgaillar <jgaillar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/26 20:10:24 by jgaillar          #+#    #+#              #
-#    Updated: 2018/11/05 14:05:13 by Awklm            ###   ########.fr        #
+#    Updated: 2018/11/09 13:27:13 by Awklm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC_NAME_EDITOR = editor.c editor_keyhooks.c editor_menu.c editor_mouse_move_hoo
 					editor_mouse_click_hook.c editor_new_map_settings.c \
 					editor_exit_warnings.c editor_new_map_settings_checking_values.c \
 					editor_get_maps.c editor_new_map_settings_clear_all_fields.c \
-					editor_alt_map.c editor_new_map_creating.c
+					editor_alt_map.c editor_new_map_creating.c editor_main_map.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

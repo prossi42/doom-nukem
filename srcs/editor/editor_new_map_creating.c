@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/05 13:47:03 by Awklm             #+#    #+#             */
-/*   Updated: 2018/11/06 01:16:05 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/09 13:30:55 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	editor_new_map_creating(t_main *m)
 	}
 	else
 	{
-		m->editor.map = 1;
+		// m->editor.map = 1;
 		m->editor.exit_warnings = 0;
 		m->editor.alt_map = 1;
 	}

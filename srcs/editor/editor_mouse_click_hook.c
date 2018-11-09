@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 02:24:09 by Awklm             #+#    #+#             */
-/*   Updated: 2018/11/06 02:00:19 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/09 10:28:31 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int		editor_exit_warnings_click_hook(t_main *m)
 			else // non
 			{
 				m->editor.map = 0;
+				m->editor.ed_alt_map.current_floor = 0;
 				editor_new_map_settings_checking_values(m);
 			}
 		}
@@ -168,14 +169,93 @@ int		editor_exit_warnings_click_hook(t_main *m)
 	return(0);
 }
 
-int		editor_alt_map_click_hook(t_main *m)
+void	editor_alt_map_menu_click_hook(t_main *m)
+{
+	if (m->editor.ed_alt_map.onclick == 1) //entree mode floor
+	{
+		m->editor.ed_alt_map.mode = 1;
+		m->editor.ed_alt_map.current_floor_tmp = m->editor.ed_alt_map.current_floor;
+	}
+	else if (m->editor.ed_alt_map.onclick == 2) //entree mode canvas
+		m->editor.ed_alt_map.mode = 2;
+}
+
+void	editor_alt_map_floor_click_hook(t_main *m)
+{
+	if (m->editor.ed_alt_map.onclick == 3) // charger l etage correspondant a la selection
+		m->editor.ed_alt_map.mode = 0;
+	else if (m->editor.ed_alt_map.onclick == 4) //quitter floors mode
+	{
+		m->editor.ed_alt_map.mode = 0;
+		m->editor.ed_alt_map.current_floor = m->editor.ed_alt_map.current_floor_tmp;
+	}
+	else if (m->editor.ed_alt_map.onclick == 5) // descend 1 etage
+	{
+		if (m->editor.ed_alt_map.current_floor > 0)
+			m->editor.ed_alt_map.current_floor--;
+	}
+	else if (m->editor.ed_alt_map.onclick == 6) // monte 1 etage
+	{
+		if (m->editor.ed_alt_map.current_floor < m->editor.ed_map.current_map_floor - 1)
+			m->editor.ed_alt_map.current_floor++;
+	}
+}
+
+void	editor_alt_map_canvas_click_hook(t_main *m, int x, int y)
+{
+	if (m->editor.ed_alt_map.onclick == 7) // charger le focus map correspondant
+		m->editor.ed_alt_map.mode = 0;
+	else if (m->editor.ed_alt_map.onclick == 8) //quitter canvas mode
+		m->editor.ed_alt_map.mode = 0;
+	else if (m->editor.ed_alt_map.onclick == 9)
+	{
+		if (m->editor.ed_alt_map.focus_two == 0 || m->editor.ed_alt_map.focus_two == 2)
+		{
+			m->editor.ed_alt_map.focus_two = 1;
+			if (m->editor.ed_alt_map.focus_one == 1)
+				m->editor.ed_alt_map.focus_one = 0;
+		}
+		else
+			m->editor.ed_alt_map.focus_two = 0;
+	}
+	else if (m->editor.ed_alt_map.onclick == 10)
+	{
+		if (m->editor.ed_alt_map.focus_one == 0 || m->editor.ed_alt_map.focus_one == 2)
+		{
+			m->editor.ed_alt_map.focus_one = 1;
+			if (m->editor.ed_alt_map.focus_two == 1)
+				m->editor.ed_alt_map.focus_two = 0;
+		}
+		else
+			m->editor.ed_alt_map.focus_one = 0;
+	}
+	else if (m->editor.ed_alt_map.onclick == 11)
+	{
+		if (m->editor.ed_alt_map.focus_one == 1)
+		{
+			m->editor.ed_alt_map.focus_one = 2;
+			m->editor.ed_alt_map.box_nb_width_one = (x - 1177) / 23;
+			m->editor.ed_alt_map.box_nb_height_one = (y - 750) / 23;
+		}
+		else if (m->editor.ed_alt_map.focus_two == 1)
+		{
+			m->editor.ed_alt_map.focus_two = 2;
+			m->editor.ed_alt_map.box_nb_width_two = (x - 1177) / 23;
+			m->editor.ed_alt_map.box_nb_height_two = (y - 750) / 23;
+		}
+	}
+}
+
+int		editor_alt_map_click_hook(t_main *m, int x, int y)
 {
 	if (m->editor.alt_map == 1)
 	{
-		if (m->editor.ed_alt_map.onclick == 1)
-			ft_putendl("floors");
-		else if (m->editor.ed_alt_map.onclick == 2)
-			ft_putendl("canvas");
+		if (m->editor.ed_alt_map.onclick == 1 || m->editor.ed_alt_map.onclick == 2)
+			editor_alt_map_menu_click_hook(m);
+		else if (m->editor.ed_alt_map.onclick >= 3 && m->editor.ed_alt_map.onclick <= 6)
+			editor_alt_map_floor_click_hook(m);
+		else
+			editor_alt_map_canvas_click_hook(m, x, y);
 		return(1);
 	}
 	return(0);
@@ -196,7 +276,7 @@ int		editor_mouse_click_hook(int button, int x, int y, t_main *m)
 	else if (m->editor.ed_ex_warn.onclick != 0)
 		status = editor_exit_warnings_click_hook(m);
 	else if (m->editor.ed_alt_map.onclick != 0)
-		status = editor_alt_map_click_hook(m);
+		status = editor_alt_map_click_hook(m, x, y);
 	if (status == 1)
 		editor(m);
 	return(0);

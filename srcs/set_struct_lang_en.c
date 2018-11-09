@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 12:15:56 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/11/06 00:41:02 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/07 21:46:58 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ int		set_struct_lang_en(t_main *m)
 	m->env.lang.editor_exit_already_exist2 = ft_strdup("already exist");
 	m->env.lang.editor_exit_change_it = ft_strdup("change it ?");
 	m->env.lang.editor_exit_bad_width = ft_strdup("The width must be");
-	m->env.lang.editor_exit_bad_width2 = ft_strdup("at least 3");
+	m->env.lang.editor_exit_bad_width2 = ft_strdup("a multiple of 10");
 	m->env.lang.editor_exit_bad_height = ft_strdup("The height must be");
-	m->env.lang.editor_exit_bad_height2 = ft_strdup("at least 3");
+	m->env.lang.editor_exit_bad_height2 = ft_strdup("a multiple of 10");
 	m->env.lang.editor_exit_bad_floor = ft_strdup("The floor value must");
 	m->env.lang.editor_exit_bad_floor2 = ft_strdup("be at least 1");
 	m->env.lang.editor_exit_error_map_creat = ft_strdup("Error occured while");
 	m->env.lang.editor_exit_error_map_creat2 = ft_strdup("creating the new map");
+	m->env.lang.editor_alt_map_floors = ft_strdup("Floors");
+	m->env.lang.editor_alt_map_canvas = ft_strdup("Canvas");
 	return(0);
 }

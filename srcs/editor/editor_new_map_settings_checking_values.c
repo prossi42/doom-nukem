@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 09:27:52 by Awklm             #+#    #+#             */
-/*   Updated: 2018/11/03 14:15:07 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/07 21:47:24 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,20 @@ int		editor_new_map_settings_checking_floors(t_main *m)
 
 int		editor_new_map_settings_checking_height(t_main *m)
 {
-	if (ft_atoi(m->editor.ed_n_map.n_map_height) < 3)
+	int		height;
+
+	height = ft_atoi(m->editor.ed_n_map.n_map_height);
+	if (height < 10 || height % 10 != 0)
 		return(3);
 	return(0);
 }
 
 int		editor_new_map_settings_checking_width(t_main *m)
 {
-	if (ft_atoi(m->editor.ed_n_map.n_map_width) < 3)
+	int		width;
+
+	width = ft_atoi(m->editor.ed_n_map.n_map_width);
+	if (width < 10 || width % 10 != 0)
 		return(2);
 	return(0);
 }

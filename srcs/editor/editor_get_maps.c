@@ -6,7 +6,7 @@
 /*   By: Awklm <Awklm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 14:23:10 by Awklm             #+#    #+#             */
-/*   Updated: 2018/11/05 14:24:12 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/08 17:14:18 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,11 @@ void	editor_get_maps(t_main *m)
 
 	if (m->editor.map == -1)
 	{
-		ft_putendl("MDR1");
 		mkdir(m->env.path.maps_path, 0755);
 		m->editor.map = 0;
 	}
 	if (stat(m->env.path.maps_path, &s_stat) == -1)
-	{
-		printf("Nom du dossier de maps : [%s]\n", m->env.path.maps_path);
-		ft_putendl("MDR2");
 		m->editor.map = -1;
-	}
 	else
 	{
 		if (m->editor.ed_map.nb_maps != -1)

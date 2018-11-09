@@ -6,7 +6,7 @@
 /*   By: awk-lm <awk-lm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:05:54 by awk-lm            #+#    #+#             */
-/*   Updated: 2018/11/06 01:41:17 by Awklm            ###   ########.fr       */
+/*   Updated: 2018/11/09 13:32:01 by Awklm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int		struct_init_env_lang(t_main *m)
 	m->env.lang.editor_exit_bad_floor2 = NULL;
 	m->env.lang.editor_exit_error_map_creat = NULL;
 	m->env.lang.editor_exit_error_map_creat2 = NULL;
+	m->env.lang.editor_alt_map_floors = NULL;
+	m->env.lang.editor_alt_map_canvas = NULL;
 	return(0);
 }
 
@@ -174,14 +176,21 @@ int		struct_init_editor_alt_map(t_main *m)
 	m->editor.ed_alt_map.ymin = 700;
 	m->editor.ed_alt_map.ymax = 1035;
 	m->editor.ed_alt_map.onclick = 0;
+	m->editor.ed_alt_map.current_floor = 0;
+	m->editor.ed_alt_map.focus_one = 0;
+	m->editor.ed_alt_map.focus_two = 0;
+	m->editor.ed_alt_map.box_nb_width_one = -1;
+	m->editor.ed_alt_map.box_nb_height_one = -1;
+	m->editor.ed_alt_map.box_nb_width_two = -1;
+	m->editor.ed_alt_map.box_nb_height_two = -1;
 	return(0);
 }
 
 int		struct_init_editor(t_main *m)
 {
 	m->editor.editor = -1;
-	m->editor.main_map = 1;
-	m->editor.alt_map = 1;
+	m->editor.main_map = 0;
+	m->editor.alt_map = 0;
 	m->editor.tools_picker = 1;
 	m->editor.menu = 1;
 	m->editor.img_picker = 1;
